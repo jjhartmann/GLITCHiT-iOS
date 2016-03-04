@@ -10,7 +10,7 @@
 #import "SlideBaseViewController.h"
 
 @interface ViewController : SlideBaseViewController
-- (IBAction)edgeSwipeDetected:(id)sender;
+- (IBAction)edgeSwipeDetected:(UIPanGestureRecognizer *)recognizer;
 
 
 @end

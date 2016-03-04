@@ -68,26 +68,48 @@
     [self.menuView addSubview:self.menuTableView];
 }
 
-- (void)showMenu:(BOOL)state
+- (void)showMenu:(BOOL)state gestureRecognizer:(UIPanGestureRecognizer *)recognizer
 {
-    [self.animator removeAllBehaviors];
+    // Get the location
+    CGPoint location = [recognizer locationInView:self.view];
     
-    // set Gravity
-    CGFloat gravityX = (state) ? 0.3 : -1.0;
-    CGFloat boundaryPX = (state) ? menuWidth : -(menuWidth + 5);
-    
-    // Set up gravity animation
-    UIGravityBehavior *gb = [[UIGravityBehavior alloc] initWithItems:@[self.menuView]];
-    gb.gravityDirection = CGVectorMake(gravityX, 0.0f);
-    
-    [self.animator addBehavior:gb];
+    CGRect frame = [self.menuView frame];
+    frame.origin.x = -menuWidth + location.x;
     
     
-    // Collision Behaviour
-    UICollisionBehavior *cb = [[UICollisionBehavior alloc] initWithItems:@[self.menuView]];
-    [cb addBoundaryWithIdentifier:@"menuBoundary" fromPoint:CGPointMake(boundaryPX, 580) toPoint:CGPointMake(boundaryPX, 0) ];
+    if (frame.origin.x <= 0)
+        self.menuView.frame = frame;
     
-    [self.animator addBehavior:cb];
+    
+    if ([recognizer state] == UIGestureRecognizerStateEnded  ||
+        [recognizer state] == UIGestureRecognizerStateCancelled)
+    {
+        frame.origin.x =  0;
+        // Animate the rest automatically
+        [UIView animateWithDuration:0.6 animations:^{
+            self.menuView.frame = frame;
+        }];
+    }
+    
+    
+//    [self.animator removeAllBehaviors];
+//    
+//    // set Gravity
+//    CGFloat gravityX = (state) ? 0.3 : -1.0;
+//    CGFloat boundaryPX = (state) ? menuWidth : -(menuWidth + 5);
+//    
+//    // Set up gravity animation
+//    UIGravityBehavior *gb = [[UIGravityBehavior alloc] initWithItems:@[self.menuView]];
+//    gb.gravityDirection = CGVectorMake(gravityX, 0.0f);
+//    
+//    [self.animator addBehavior:gb];
+//    
+//    
+//    // Collision Behaviour
+//    UICollisionBehavior *cb = [[UICollisionBehavior alloc] initWithItems:@[self.menuView]];
+//    [cb addBoundaryWithIdentifier:@"menuBoundary" fromPoint:CGPointMake(boundaryPX, 580) toPoint:CGPointMake(boundaryPX, 0) ];
+//    
+//    [self.animator addBehavior:cb];
 }
 
 

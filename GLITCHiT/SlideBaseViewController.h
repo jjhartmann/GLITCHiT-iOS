@@ -15,7 +15,7 @@
 @property (nonatomic, strong) UIDynamicAnimator *animator;
 
 - (void)setupSlideMenu;
-- (void)showMenu:(BOOL)state;
+- (void)showMenu:(BOOL)state gestureRecognizer:(UIPanGestureRecognizer *)recognizer;
 
 @end
 

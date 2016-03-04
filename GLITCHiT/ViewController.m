@@ -24,7 +24,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)edgeSwipeDetected:(id)sender {
-    [self showMenu:YES];
+- (IBAction)edgeSwipeDetected:(UIPanGestureRecognizer *)recognizer {
+    [super showMenu:YES gestureRecognizer:recognizer];
 }
 @end
