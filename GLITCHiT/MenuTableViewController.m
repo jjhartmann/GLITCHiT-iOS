@@ -39,6 +39,30 @@
     return 5;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 0:
+            NSLog(@"CAMERA");
+            break;
+        case 1:
+            NSLog(@"Load Image");
+            break;
+        case 2:
+            NSLog(@"Purchase");
+            break;
+        case 3:
+            NSLog(@"Settings");
+            break;
+        case 4:
+            NSLog(@"About");
+            break;
+        default:
+            break;
+    }
+}
+
+
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
