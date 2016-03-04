@@ -206,6 +206,7 @@
     
     NSString *text = self.menuItems[indexPath.row];
     cell.textLabel.text = text;
+    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:30.0];
     cell.backgroundColor = [UIColor clearColor];
     cell.tag = 102;
     
