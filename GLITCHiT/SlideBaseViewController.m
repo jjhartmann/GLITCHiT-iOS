@@ -1,4 +1,4 @@
-//
+ //
 //  SlideBaseViewController.m
 //  GLITCHiT
 //
@@ -29,9 +29,11 @@
     menuHeight = rootViewHeight;
     menuWidth = (3*rootViewWidth)/4;
     
+    self.menuItems = @[@"Camera", @"Load Images", @"Purchase", @"Settings", @"About"];
     [self setupSlideMenu];
     
-    // Get content from Other views.
+    // Init animator
+    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
 }
 
@@ -47,18 +49,76 @@
 
 - (void)setupSlideMenu
 {
-    self.menuTableView = [self.view.subviews objectAtIndex:0];
+    
+    self.menuView = [[UIView alloc] initWithFrame:CGRectMake(-menuWidth, 0, menuWidth, menuHeight)];
+    
+    self.menuView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.menuView];
+    
+    
+    // Set up Table View.
+    self.menuTableView = [[UITableView alloc] initWithFrame:self.menuView.bounds style:UITableViewStylePlain];
+    self.menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.menuTableView.scrollEnabled = NO;
     self.menuTableView.alpha = 0.5;
+    self.menuTableView.delegate = self;
+    self.menuTableView.dataSource = self;
+    
+    
+    [self.menuView addSubview:self.menuTableView];
 }
 
 - (void)showMenu:(BOOL)state
 {
+    [self.animator removeAllBehaviors];
     
+    // set Gravity
+    CGFloat gravityX = (state) ? 0.3 : -1.0;
+    CGFloat boundaryPX = (state) ? menuWidth : -(menuWidth + 5);
+    
+    // Set up gravity animation
+    UIGravityBehavior *gb = [[UIGravityBehavior alloc] initWithItems:@[self.menuView]];
+    gb.gravityDirection = CGVectorMake(gravityX, 0.0f);
+    
+    [self.animator addBehavior:gb];
+    
+    
+    // Collision Behaviour
+    UICollisionBehavior *cb = [[UICollisionBehavior alloc] initWithItems:@[self.menuView]];
+    [cb addBoundaryWithIdentifier:@"menuBoundary" fromPoint:CGPointMake(boundaryPX, 580) toPoint:CGPointMake(boundaryPX, 0) ];
+    
+    [self.animator addBehavior:cb];
 }
 
 
+#pragma mark -
+#pragma mark UITableView Delegate and Datasource methods
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.menuItems.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Implement cell
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    
+    NSString *text = self.menuItems[indexPath.row];
+    cell.textLabel.text = text;
+    cell.backgroundColor = [UIColor clearColor];
+    
+    return cell;
+}
 
 /*
 #pragma mark - Navigation
