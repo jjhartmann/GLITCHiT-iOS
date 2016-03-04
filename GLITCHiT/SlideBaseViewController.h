@@ -17,7 +17,8 @@
 @property (nonatomic, strong) NSArray *menuItems;
 
 - (void)setupSlideMenu;
-- (void)showMenu:(BOOL)state gestureRecognizer:(UIPanGestureRecognizer *)recognizer;
+- (void)showMenu:(BOOL)state gestureRecognizer:(UIGestureRecognizer *)recognizer;
+- (void)hideMenu:(UIGestureRecognizer *)recognizer;
 
 @end
 

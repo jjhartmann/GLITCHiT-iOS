@@ -97,7 +97,7 @@
     [self.menuView addSubview:self.menuTableView];
 }
 
-- (void)showMenu:(BOOL)state gestureRecognizer:(UIPanGestureRecognizer *)recognizer
+- (void)showMenu:(BOOL)state gestureRecognizer:(UIGestureRecognizer *)recognizer
 {
     // Get the location
     CGPoint location = [recognizer locationInView:self.view];
@@ -134,6 +134,21 @@
     }
 }
 
+- (void)hideMenu:(UIGestureRecognizer *)recognizer
+{
+    menuShouldClose = NO;
+    menuActive = NO;
+    CGRect frame = [self.menuView frame];
+    frame.origin.x = -(menuWidth + 5);
+    
+    // Animate the rest automatically
+    [UIView animateWithDuration:0.6 animations:^{
+        self.menuView.frame = frame;
+    }];
+
+}
+
+
 #pragma mark -
 #pragma mark Gesture Control Impl
 - (void)respondToSreenPanGesture:(UIScreenEdgePanGestureRecognizer *)recognizer
@@ -161,7 +176,10 @@
 - (void)respondToTapGesture:(UITapGestureRecognizer *)recognizer
 {
     UIView *view = [self.view hitTest:[recognizer locationInView:self.view] withEvent:Nil];
-    NSLog(@"View Tag: %d", view.tag);
+    if (menuActive && view == self.view)
+    {
+        [self hideMenu:recognizer];
+    }
 }
 
 #pragma mark -
