@@ -23,4 +23,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)cameraButtonActivated:(id)sender {
+}
 @end

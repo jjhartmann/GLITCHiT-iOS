@@ -10,6 +10,9 @@
 #import "SlideBaseViewController.h"
 
 @interface ViewController : SlideBaseViewController
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 
+- (IBAction)cameraButtonActivated:(id)sender;
 @end
 

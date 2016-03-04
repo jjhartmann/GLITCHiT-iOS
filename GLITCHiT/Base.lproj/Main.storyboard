@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,25 +20,37 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKX-s9-SpX">
                                 <rect key="frame" x="230" y="436" width="140" height="100"/>
-                                <state key="normal" image="existsop">
+                                <state key="normal" image="cameraButton">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a8m-fp-zVo">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nKX-s9-SpX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EOY-xE-3vz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a8m-fp-zVo" secondAttribute="trailing" constant="-20" id="KXV-OO-nhj"/>
+                            <constraint firstItem="a8m-fp-zVo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="LVZ-i4-MqC"/>
+                            <constraint firstItem="a8m-fp-zVo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="UVG-cX-t41"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nKX-s9-SpX" secondAttribute="bottom" constant="58" id="XaZ-lZ-zJl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a8m-fp-zVo" secondAttribute="bottom" id="s8k-e0-3cZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="nKX-s9-SpX" id="dyu-57-mjO"/>
+                        <outlet property="imageView" destination="a8m-fp-zVo" id="6K8-Ge-jMp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="565" y="477"/>
         </scene>
     </scenes>
     <resources>
-        <image name="existsop" width="86" height="100"/>
+        <image name="cameraButton" width="81" height="81"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
