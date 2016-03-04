@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SlideBaseViewController : UIViewController < UITableViewDelegate, UITableViewDataSource>
+@interface SlideBaseViewController : UIViewController
+                                    <UITableViewDelegate,
+                                    UITableViewDataSource,
+                                    UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UIView *menuView;
 @property (nonatomic, strong) UITableView *menuTableView;
 @property (nonatomic, strong) NSArray *menuItems;

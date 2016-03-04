@@ -60,6 +60,7 @@
     [tapRecognizer setNumberOfTapsRequired:1];
     
     [tapRecognizer requireGestureRecognizerToFail:screenPanRecognizer];
+    tapRecognizer.delegate = self;
     [self.view addGestureRecognizer:tapRecognizer];
 }
 
@@ -148,7 +149,7 @@
     if ([recognizer state] == UIGestureRecognizerStateBegan)
     {
         UIView *view = [self.view hitTest:[recognizer locationInView:self.view] withEvent:Nil];
-        menuShouldClose = (view.tag == 1);
+        menuShouldClose = (view == self.view);
     }
     
     if (menuActive && menuShouldClose)
@@ -188,8 +189,45 @@
     NSString *text = self.menuItems[indexPath.row];
     cell.textLabel.text = text;
     cell.backgroundColor = [UIColor clearColor];
+    cell.tag = 102;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 0:
+            NSLog(@"CAMERA");
+            break;
+        case 1:
+            NSLog(@"Load Image");
+            break;
+        case 2:
+            NSLog(@"Purchase");
+            break;
+        case 3:
+            NSLog(@"Settings");
+            break;
+        case 4:
+            NSLog(@"About");
+            break;
+        default:
+            break;
+    }
+}
+
+
+#pragma mark -
+#pragma Gesture recognizer delegate impls
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if (touch.view == self.view)
+    {
+        return YES;
+    }
+    
+    return NO;
 }
 
 /*
