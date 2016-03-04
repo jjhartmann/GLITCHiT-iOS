@@ -14,6 +14,7 @@
     CGFloat rootViewWidth;
     CGFloat rootViewHeight;
     BOOL menuActive;
+    BOOL menuShouldClose;
 }
 
 @end
@@ -22,6 +23,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.tag = 1;
+    
+    // Setting up slide menu
+    rootViewHeight = self.view.frame.size.height;
+    rootViewWidth  = self.view.frame.size.width;
+    menuHeight = rootViewHeight;
+    menuWidth = (3*rootViewWidth)/4;
+    
+    self.menuItems = @[@"Camera", @"Load Images", @"Purchase", @"Settings", @"About"];
+    [self setupSlideMenu];
     
     // Create Gesture recognizer for pan
     UIScreenEdgePanGestureRecognizer *screenPanRecognizer = [[UIScreenEdgePanGestureRecognizer alloc]
@@ -41,18 +53,14 @@
     [panGesture requireGestureRecognizerToFail:screenPanRecognizer];
     [self.view addGestureRecognizer:panGesture];
     menuActive = NO;
+    menuShouldClose = NO;
     
     // Create tap gesture for dismissing view.
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(respondToTapGesture:)];
+    [tapRecognizer setNumberOfTapsRequired:1];
     
-    
-    // Setting up slide menu
-    rootViewHeight = self.view.frame.size.height;
-    rootViewWidth  = self.view.frame.size.width;
-    menuHeight = rootViewHeight;
-    menuWidth = (3*rootViewWidth)/4;
-    
-    self.menuItems = @[@"Camera", @"Load Images", @"Purchase", @"Settings", @"About"];
-    [self setupSlideMenu];
+    [tapRecognizer requireGestureRecognizerToFail:screenPanRecognizer];
+    [self.view addGestureRecognizer:tapRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +79,7 @@
     self.menuView = [[UIView alloc] initWithFrame:CGRectMake(-menuWidth, 0, menuWidth, menuHeight)];
     
     self.menuView.backgroundColor = [UIColor clearColor];
+    self.menuView.tag = 100;
     [self.view addSubview:self.menuView];
     
     
@@ -79,6 +88,7 @@
     self.menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.menuTableView.scrollEnabled = NO;
     self.menuTableView.alpha = 0.5;
+    self.menuTableView.tag = 101;
     self.menuTableView.delegate = self;
     self.menuTableView.dataSource = self;
     
@@ -114,6 +124,8 @@
             menuActive = NO;
         }
         
+        menuShouldClose = NO;
+        
         // Animate the rest automatically
         [UIView animateWithDuration:0.6 animations:^{
             self.menuView.frame = frame;
@@ -133,10 +145,22 @@
 
 - (void)respondToPanGesture:(UIPanGestureRecognizer *)recognizer
 {
-    if (menuActive)
+    if ([recognizer state] == UIGestureRecognizerStateBegan)
+    {
+        UIView *view = [self.view hitTest:[recognizer locationInView:self.view] withEvent:Nil];
+        menuShouldClose = (view.tag == 1);
+    }
+    
+    if (menuActive && menuShouldClose)
     {
         [self showMenu:NO gestureRecognizer:recognizer];
     }
+}
+
+- (void)respondToTapGesture:(UITapGestureRecognizer *)recognizer
+{
+    UIView *view = [self.view hitTest:[recognizer locationInView:self.view] withEvent:Nil];
+    NSLog(@"View Tag: %d", view.tag);
 }
 
 #pragma mark -
