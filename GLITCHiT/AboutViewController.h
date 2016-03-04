@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SlideBaseViewController.h"
 
-@interface AboutViewController : UIViewController
+@interface AboutViewController : SlideBaseViewController
 
 @end
