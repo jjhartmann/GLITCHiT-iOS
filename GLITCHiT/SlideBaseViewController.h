@@ -17,6 +17,6 @@
 - (void)setupSlideMenu;
 - (void)showMenu:(BOOL)state gestureRecognizer:(UIGestureRecognizer *)recognizer;
 - (void)hideMenu:(UIGestureRecognizer *)recognizer;
-
+- (void)setCurrentView:(NSString *)cView;
 @end
 

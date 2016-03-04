@@ -69,6 +69,12 @@
 }
 
 
+- (void)setCurrentView:(NSString *)cView
+{
+    self.slideMenuView.currentView = cView;
+}
+
+
 #pragma mark -
 #pragma mark Slide Menu Impelmentation
 // Slide menu Methods
