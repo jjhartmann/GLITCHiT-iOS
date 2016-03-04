@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77D5B5771C8909E4004AC755 /* SlideBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D5B5761C8909E4004AC755 /* SlideBaseViewController.m */; };
 		77D67EF41C7AF67000C2BFC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D67EF31C7AF67000C2BFC1 /* main.m */; };
 		77D67EF71C7AF67000C2BFC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D67EF61C7AF67000C2BFC1 /* AppDelegate.m */; };
 		77D67EFA1C7AF67000C2BFC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D67EF91C7AF67000C2BFC1 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		77D5B5751C8909E4004AC755 /* SlideBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideBaseViewController.h; sourceTree = "<group>"; };
+		77D5B5761C8909E4004AC755 /* SlideBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideBaseViewController.m; sourceTree = "<group>"; };
 		77D67EEF1C7AF67000C2BFC1 /* GLITCHiT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLITCHiT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D67EF31C7AF67000C2BFC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		77D67EF51C7AF67000C2BFC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				77D67EF61C7AF67000C2BFC1 /* AppDelegate.m */,
 				77D67EF81C7AF67000C2BFC1 /* ViewController.h */,
 				77D67EF91C7AF67000C2BFC1 /* ViewController.m */,
+				77D5B5751C8909E4004AC755 /* SlideBaseViewController.h */,
+				77D5B5761C8909E4004AC755 /* SlideBaseViewController.m */,
 				77D67EFB1C7AF67000C2BFC1 /* Main.storyboard */,
 				77D67EFE1C7AF67100C2BFC1 /* Assets.xcassets */,
 				77D67F001C7AF67100C2BFC1 /* LaunchScreen.storyboard */,
@@ -207,6 +212,7 @@
 				TargetAttributes = {
 					77D67EEE1C7AF66F00C2BFC1 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = V5GB49GW7V;
 					};
 					77D67F071C7AF67100C2BFC1 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -273,6 +279,7 @@
 				77D67EFA1C7AF67000C2BFC1 /* ViewController.m in Sources */,
 				77D67EF71C7AF67000C2BFC1 /* AppDelegate.m in Sources */,
 				77D67EF41C7AF67000C2BFC1 /* main.m in Sources */,
+				77D5B5771C8909E4004AC755 /* SlideBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,10 +420,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GLITCHiT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.jjhartmann.GLITCHiT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -424,10 +434,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GLITCHiT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.jjhartmann.GLITCHiT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -498,6 +511,7 @@
 				77D67F1E1C7AF67100C2BFC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77D67F1F1C7AF67100C2BFC1 /* Build configuration list for PBXNativeTarget "GLITCHiTTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +520,7 @@
 				77D67F211C7AF67100C2BFC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77D67F221C7AF67100C2BFC1 /* Build configuration list for PBXNativeTarget "GLITCHiTUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +529,7 @@
 				77D67F241C7AF67100C2BFC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
