@@ -123,26 +123,6 @@
             self.menuView.frame = frame;
         }];
     }
-    
-    
-//    [self.animator removeAllBehaviors];
-//    
-//    // set Gravity
-//    CGFloat gravityX = (state) ? 0.3 : -1.0;
-//    CGFloat boundaryPX = (state) ? menuWidth : -(menuWidth + 5);
-//    
-//    // Set up gravity animation
-//    UIGravityBehavior *gb = [[UIGravityBehavior alloc] initWithItems:@[self.menuView]];
-//    gb.gravityDirection = CGVectorMake(gravityX, 0.0f);
-//    
-//    [self.animator addBehavior:gb];
-//    
-//    
-//    // Collision Behaviour
-//    UICollisionBehavior *cb = [[UICollisionBehavior alloc] initWithItems:@[self.menuView]];
-//    [cb addBoundaryWithIdentifier:@"menuBoundary" fromPoint:CGPointMake(boundaryPX, 580) toPoint:CGPointMake(boundaryPX, 0) ];
-//    
-//    [self.animator addBehavior:cb];
 }
 
 #pragma mark -
