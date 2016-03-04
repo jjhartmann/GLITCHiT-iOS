@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SlideBaseViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : SlideBaseViewController
+- (IBAction)edgeSwipeDetected:(id)sender;
 
 
 @end
