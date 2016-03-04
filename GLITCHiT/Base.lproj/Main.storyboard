@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="565" y="479"/>
         </scene>
-        <!--Slide Base View Controller-->
+        <!--About View Controller-->
         <scene sceneID="Cmc-bn-m8H">
             <objects>
-                <viewController id="OcE-9J-6tf" customClass="SlideBaseViewController" sceneMemberID="viewController">
+                <viewController id="OcE-9J-6tf" customClass="AboutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mYd-wr-AsZ"/>
                         <viewControllerLayoutGuide type="bottom" id="RLW-kN-hCX"/>
@@ -186,6 +186,9 @@
                             <outlet property="delegate" destination="vR7-R6-dwh" id="mU9-Lg-Sim"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="OcE-9J-6tf" kind="show" identifier="aboutViewSegue" id="O2v-JC-Ppx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xMC-VB-TAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
