@@ -8,7 +8,12 @@
 
 #import "SlideBaseViewController.h"
 
-@interface SlideBaseViewController ()
+@interface SlideBaseViewController (){
+    CGFloat menuWidth;
+    CGFloat menuHeight;
+    CGFloat rootViewWidth;
+    CGFloat rootViewHeight;
+}
 
 @end
 
@@ -17,6 +22,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Setting up slide menu
+    rootViewHeight = self.view.frame.size.height;
+    rootViewWidth  = self.view.frame.size.width;
+    menuHeight = rootViewHeight;
+    menuWidth = (3*rootViewWidth)/4;
+    
+    [self setupSlideMenu];
 }
 
 - (void)didReceiveMemoryWarning {
