@@ -10,9 +10,12 @@
 
 @interface MenuTableViewController : UITableViewController <UITableViewDelegate>
 @property (nonatomic, strong) MenuTableViewController *singleton;
+@property (nonatomic, strong) NSString *currentView;
+
 + (MenuTableViewController *) getController;
 + (BOOL) isValid;
 + (void) setController:(MenuTableViewController *)controller;
+
 
 @end
 
