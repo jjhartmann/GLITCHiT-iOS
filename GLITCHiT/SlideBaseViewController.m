@@ -13,6 +13,7 @@
     CGFloat menuHeight;
     CGFloat rootViewWidth;
     CGFloat rootViewHeight;
+    BOOL menuActive;
 }
 
 @end
@@ -32,8 +33,16 @@
     
     [self.view addGestureRecognizer:screenPanRecognizer];
     
-
+    // Create Gesture for removing menu
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(respondToPanGesture:)];
+    [panGesture setMinimumNumberOfTouches:1];
+    [panGesture setMaximumNumberOfTouches:1];
     
+    [panGesture requireGestureRecognizerToFail:screenPanRecognizer];
+    [self.view addGestureRecognizer:panGesture];
+    menuActive = NO;
+    
+    // Create tap gesture for dismissing view.
     
     
     // Setting up slide menu
@@ -97,7 +106,15 @@
     if ([recognizer state] == UIGestureRecognizerStateEnded  ||
         [recognizer state] == UIGestureRecognizerStateCancelled)
     {
-        frame.origin.x =  0;
+        if (state)
+        {
+            frame.origin.x =  0;
+        }
+        else
+        {
+            frame.origin.x = -(menuWidth + 5);
+        }
+        
         // Animate the rest automatically
         [UIView animateWithDuration:0.6 animations:^{
             self.menuView.frame = frame;
@@ -129,12 +146,28 @@
 #pragma mark Gesture Control Impl
 - (void)respondToSreenPanGesture:(UIScreenEdgePanGestureRecognizer *)recognizer
 {
-    [self showMenu:YES gestureRecognizer:recognizer];
+    if (!menuActive)
+    {
+        [self showMenu:YES gestureRecognizer:recognizer];
+
+        if ([recognizer state] == UIGestureRecognizerStateEnded)
+        {
+            menuActive = YES;
+        }
+    }
 }
 
-- (void)respondToPanGesture:(UIScreenEdgePanGestureRecognizer *)recognizer
+- (void)respondToPanGesture:(UIPanGestureRecognizer *)recognizer
 {
-    [self showMenu:NO gestureRecognizer:recognizer];
+    if (menuActive)
+    {
+        [self showMenu:NO gestureRecognizer:recognizer];
+
+        if ([recognizer state] == UIGestureRecognizerStateEnded)
+        {
+            menuActive = NO;
+        }
+    }
 }
 
 #pragma mark -
