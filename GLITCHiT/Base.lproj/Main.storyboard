@@ -30,18 +30,9 @@
                             <constraint firstItem="nKX-s9-SpX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EOY-xE-3vz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nKX-s9-SpX" secondAttribute="bottom" constant="58" id="XaZ-lZ-zJl"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="g5H-V3-Yj9" appends="YES" id="dAQ-86-twd"/>
-                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="g5H-V3-Yj9">
-                    <rectEdge key="edges" left="YES"/>
-                    <connections>
-                        <action selector="edgeSwipeDetected:" destination="BYZ-38-t0r" id="Ma4-ve-i3B"/>
-                    </connections>
-                </screenEdgePanGestureRecognizer>
             </objects>
         </scene>
     </scenes>

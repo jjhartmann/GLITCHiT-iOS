@@ -21,7 +21,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // Create Gesture recognizer for pan
+    UIScreenEdgePanGestureRecognizer *panRecognizer = [[UIScreenEdgePanGestureRecognizer alloc]
+                                                       initWithTarget:self
+                                                       action:@selector(respondToPanGesture:)];
+    [panRecognizer setMinimumNumberOfTouches:1];
+    [panRecognizer setMaximumNumberOfTouches:1];
+    [panRecognizer setEdges:UIRectEdgeLeft];
+    
+    
+    [self.view addGestureRecognizer:panRecognizer];
+    
+    
+    
     
     // Setting up slide menu
     rootViewHeight = self.view.frame.size.height;
@@ -110,6 +123,13 @@
 //    [cb addBoundaryWithIdentifier:@"menuBoundary" fromPoint:CGPointMake(boundaryPX, 580) toPoint:CGPointMake(boundaryPX, 0) ];
 //    
 //    [self.animator addBehavior:cb];
+}
+
+#pragma mark -
+#pragma mark Gesture Control Impl
+- (void)respondToPanGesture:(UIScreenEdgePanGestureRecognizer *)recognizer
+{
+    [self showMenu:YES gestureRecognizer:recognizer];
 }
 
 

@@ -23,8 +23,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (IBAction)edgeSwipeDetected:(UIPanGestureRecognizer *)recognizer {
-    [super showMenu:YES gestureRecognizer:recognizer];
-}
 @end
