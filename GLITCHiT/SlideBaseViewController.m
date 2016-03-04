@@ -31,8 +31,7 @@
     rootViewWidth  = self.view.frame.size.width;
     menuHeight = rootViewHeight;
     menuWidth = (3*rootViewWidth)/4;
-    
-    self.menuItems = @[@"Camera", @"Load Images", @"Purchase", @"Settings", @"About"];
+
     [self setupSlideMenu];
     
     // Create Gesture recognizer for pan
@@ -76,25 +75,16 @@
 
 - (void)setupSlideMenu
 {
-    
-    self.menuView = [[UIView alloc] initWithFrame:CGRectMake(-menuWidth, 0, menuWidth, menuHeight)];
-    
-    self.menuView.backgroundColor = [UIColor clearColor];
-    self.menuView.tag = 100;
+    // Set up static table
+    self.slideMenuView = [self.storyboard instantiateViewControllerWithIdentifier:@"MenuTableSlideView"];
+
+    //self.menuView = [[UIView alloc] initWithFrame:CGRectMake(-menuWidth, 0, menuWidth, menuHeight)];
+    self.menuView = self.slideMenuView.view;
+    self.menuView.frame = CGRectMake(-menuWidth, 0, menuWidth, menuHeight);
     [self.view addSubview:self.menuView];
     
-    
-    // Set up Table View.
-    self.menuTableView = [[UITableView alloc] initWithFrame:self.menuView.bounds style:UITableViewStylePlain];
-    self.menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.menuTableView.scrollEnabled = NO;
-    self.menuTableView.alpha = 0.5;
-    self.menuTableView.tag = 101;
-    self.menuTableView.delegate = self;
-    self.menuTableView.dataSource = self;
-    
-    
-    [self.menuView addSubview:self.menuTableView];
+    [self addChildViewController:self.slideMenuView];
+    [self.slideMenuView didMoveToParentViewController:self];
 }
 
 - (void)showMenu:(BOOL)state gestureRecognizer:(UIGestureRecognizer *)recognizer
