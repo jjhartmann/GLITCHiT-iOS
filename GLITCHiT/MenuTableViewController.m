@@ -8,11 +8,34 @@
 
 #import "MenuTableViewController.h"
 
-@interface MenuTableViewController ()
+@interface MenuTableViewController (){
 
+}
 @end
 
 @implementation MenuTableViewController
+
+    static MenuTableViewController *sharedMenu = nil;
+
+// public method to retrieve universal controller
++ (MenuTableViewController *)getController
+{
+    return sharedMenu;
+}
+
++ (BOOL)isValid
+{
+    return sharedMenu != nil;
+}
+
++ (void)setController:(MenuTableViewController *)controller
+{
+    if (sharedMenu == nil)
+    {
+        sharedMenu = controller;
+    }
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

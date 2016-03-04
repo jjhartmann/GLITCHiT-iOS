@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface MenuTableViewController : UITableViewController <UITableViewDelegate>
+@property (nonatomic, strong) MenuTableViewController *singleton;
++ (MenuTableViewController *) getController;
++ (BOOL) isValid;
++ (void) setController:(MenuTableViewController *)controller;
 
 @end
+
+

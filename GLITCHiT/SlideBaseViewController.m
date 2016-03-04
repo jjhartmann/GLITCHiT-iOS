@@ -75,9 +75,14 @@
 
 - (void)setupSlideMenu
 {
-    // Set up static table
-    self.slideMenuView = [self.storyboard instantiateViewControllerWithIdentifier:@"MenuTableSlideView"];
-
+    // Set up static table and get controller
+    if (![MenuTableViewController isValid])
+    {
+        [MenuTableViewController setController:[self.storyboard instantiateViewControllerWithIdentifier:@"MenuTableSlideView"]];
+    }
+    
+    self.slideMenuView = [MenuTableViewController getController];
+    
     //self.menuView = [[UIView alloc] initWithFrame:CGRectMake(-menuWidth, 0, menuWidth, menuHeight)];
     self.menuView = self.slideMenuView.view;
     self.menuView.frame = CGRectMake(-menuWidth, 0, menuWidth, menuHeight);
