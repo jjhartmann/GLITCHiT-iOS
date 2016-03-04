@@ -53,10 +53,6 @@
     
     self.menuItems = @[@"Camera", @"Load Images", @"Purchase", @"Settings", @"About"];
     [self setupSlideMenu];
-    
-    // Init animator
-    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-    
 }
 
 - (void)didReceiveMemoryWarning {
