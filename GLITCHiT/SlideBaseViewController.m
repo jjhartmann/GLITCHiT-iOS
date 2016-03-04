@@ -23,16 +23,16 @@
     [super viewDidLoad];
     
     // Create Gesture recognizer for pan
-    UIScreenEdgePanGestureRecognizer *panRecognizer = [[UIScreenEdgePanGestureRecognizer alloc]
+    UIScreenEdgePanGestureRecognizer *screenPanRecognizer = [[UIScreenEdgePanGestureRecognizer alloc]
                                                        initWithTarget:self
-                                                       action:@selector(respondToPanGesture:)];
-    [panRecognizer setMinimumNumberOfTouches:1];
-    [panRecognizer setMaximumNumberOfTouches:1];
-    [panRecognizer setEdges:UIRectEdgeLeft];
+                                                       action:@selector(respondToSreenPanGesture:)];
+    [screenPanRecognizer setMinimumNumberOfTouches:1];
+    [screenPanRecognizer setMaximumNumberOfTouches:1];
+    [screenPanRecognizer setEdges:UIRectEdgeLeft];
     
+    [self.view addGestureRecognizer:screenPanRecognizer];
     
-    [self.view addGestureRecognizer:panRecognizer];
-    
+
     
     
     
@@ -127,11 +127,15 @@
 
 #pragma mark -
 #pragma mark Gesture Control Impl
-- (void)respondToPanGesture:(UIScreenEdgePanGestureRecognizer *)recognizer
+- (void)respondToSreenPanGesture:(UIScreenEdgePanGestureRecognizer *)recognizer
 {
     [self showMenu:YES gestureRecognizer:recognizer];
 }
 
+- (void)respondToPanGesture:(UIScreenEdgePanGestureRecognizer *)recognizer
+{
+    [self showMenu:NO gestureRecognizer:recognizer];
+}
 
 #pragma mark -
 #pragma mark UITableView Delegate and Datasource methods
