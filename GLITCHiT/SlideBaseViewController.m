@@ -30,6 +30,9 @@
     menuWidth = (3*rootViewWidth)/4;
     
     [self setupSlideMenu];
+    
+    // Get content from Other views.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,7 +47,9 @@
 
 - (void)setupSlideMenu
 {
-    
+    self.menuTableView = [self.view.subviews objectAtIndex:0];
+    self.menuTableView.scrollEnabled = NO;
+    self.menuTableView.alpha = 0.5;
 }
 
 - (void)showMenu:(BOOL)state
