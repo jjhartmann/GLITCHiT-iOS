@@ -106,13 +106,16 @@
     if ([recognizer state] == UIGestureRecognizerStateEnded  ||
         [recognizer state] == UIGestureRecognizerStateCancelled)
     {
-        if (state)
+        if ((state && location.x > menuWidth/3) ||
+            (!state && location.x > menuWidth*2/3))
         {
             frame.origin.x =  0;
+            menuActive = YES;
         }
         else
         {
             frame.origin.x = -(menuWidth + 5);
+            menuActive = NO;
         }
         
         // Animate the rest automatically
@@ -149,11 +152,6 @@
     if (!menuActive)
     {
         [self showMenu:YES gestureRecognizer:recognizer];
-
-        if ([recognizer state] == UIGestureRecognizerStateEnded)
-        {
-            menuActive = YES;
-        }
     }
 }
 
@@ -162,11 +160,6 @@
     if (menuActive)
     {
         [self showMenu:NO gestureRecognizer:recognizer];
-
-        if ([recognizer state] == UIGestureRecognizerStateEnded)
-        {
-            menuActive = NO;
-        }
     }
 }
 
