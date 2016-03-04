@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuTableViewController.h"
 
 @interface SlideBaseViewController : UIViewController
-                                    <UITableViewDelegate,
-                                    UITableViewDataSource,
-                                    UIGestureRecognizerDelegate>
+                                    <UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UIView *menuView;
-@property (nonatomic, strong) UITableView *menuTableView;
-@property (nonatomic, strong) NSArray *menuItems;
+@property (nonatomic, weak) MenuTableViewController *slideMenuView;
 
 - (void)setupSlideMenu;
 - (void)showMenu:(BOOL)state gestureRecognizer:(UIGestureRecognizer *)recognizer;

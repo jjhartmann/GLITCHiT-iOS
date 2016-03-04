@@ -172,60 +172,6 @@
     }
 }
 
-#pragma mark -
-#pragma mark UITableView Delegate and Datasource methods
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.menuItems.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Implement cell
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    if (!cell)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    }
-    
-    NSString *text = self.menuItems[indexPath.row];
-    cell.textLabel.text = text;
-    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:30.0];
-    cell.backgroundColor = [UIColor clearColor];
-    cell.tag = 102;
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    switch (indexPath.row) {
-        case 0:
-            NSLog(@"CAMERA");
-            break;
-        case 1:
-            NSLog(@"Load Image");
-            break;
-        case 2:
-            NSLog(@"Purchase");
-            break;
-        case 3:
-            NSLog(@"Settings");
-            break;
-        case 4:
-            NSLog(@"About");
-            break;
-        default:
-            break;
-    }
-}
-
 
 #pragma mark -
 #pragma Gesture recognizer delegate impls
