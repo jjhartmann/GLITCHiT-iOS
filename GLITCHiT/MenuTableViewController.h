@@ -16,7 +16,6 @@
 + (BOOL) isValid;
 + (void) setController:(MenuTableViewController *)controller;
 
-
 @end
 
 

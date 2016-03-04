@@ -79,6 +79,8 @@
             break;
         case 4:
             NSLog(@"About");
+            if (![self.currentView  isEqual: @"AboutView"])
+                [self performSegueWithIdentifier:@"aboutViewSegue" sender:self];
             break;
         default:
             break;
@@ -88,7 +90,7 @@
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: forIndexPath:indexPath];
     
     // Configure the cell...
     
