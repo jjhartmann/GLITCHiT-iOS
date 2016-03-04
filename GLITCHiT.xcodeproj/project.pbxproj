@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		77D5B5771C8909E4004AC755 /* SlideBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D5B5761C8909E4004AC755 /* SlideBaseViewController.m */; };
+		77D5B57A1C898977004AC755 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D5B5791C898977004AC755 /* MenuTableViewController.m */; };
 		77D67EF41C7AF67000C2BFC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D67EF31C7AF67000C2BFC1 /* main.m */; };
 		77D67EF71C7AF67000C2BFC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D67EF61C7AF67000C2BFC1 /* AppDelegate.m */; };
 		77D67EFA1C7AF67000C2BFC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D67EF91C7AF67000C2BFC1 /* ViewController.m */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		77D5B5751C8909E4004AC755 /* SlideBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideBaseViewController.h; sourceTree = "<group>"; };
 		77D5B5761C8909E4004AC755 /* SlideBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideBaseViewController.m; sourceTree = "<group>"; };
+		77D5B5781C898977004AC755 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
+		77D5B5791C898977004AC755 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
 		77D67EEF1C7AF67000C2BFC1 /* GLITCHiT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLITCHiT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D67EF31C7AF67000C2BFC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		77D67EF51C7AF67000C2BFC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				77D5B5751C8909E4004AC755 /* SlideBaseViewController.h */,
 				77D5B5761C8909E4004AC755 /* SlideBaseViewController.m */,
 				77D67EFB1C7AF67000C2BFC1 /* Main.storyboard */,
+				77D5B5781C898977004AC755 /* MenuTableViewController.h */,
+				77D5B5791C898977004AC755 /* MenuTableViewController.m */,
 				77D67EFE1C7AF67100C2BFC1 /* Assets.xcassets */,
 				77D67F001C7AF67100C2BFC1 /* LaunchScreen.storyboard */,
 				77D67F031C7AF67100C2BFC1 /* Info.plist */,
@@ -280,6 +285,7 @@
 				77D67EF71C7AF67000C2BFC1 /* AppDelegate.m in Sources */,
 				77D67EF41C7AF67000C2BFC1 /* main.m in Sources */,
 				77D5B5771C8909E4004AC755 /* SlideBaseViewController.m in Sources */,
+				77D5B57A1C898977004AC755 /* MenuTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
