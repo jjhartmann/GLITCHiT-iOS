@@ -249,6 +249,15 @@
     return NO;
 }
 
+#pragma mark -
+#pragma mark Orientation Control
+- (UIInterfaceOrientationMask) supportedInterfaceOrientations {
+
+    return UIInterfaceOrientationMaskPortrait;
+
+}
+
+
 /*
 #pragma mark - Navigation
 
