@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SlideBaseViewController.h"
 
-@interface AboutViewController : SlideBaseViewController
+@protocol AboutViewControllerDelegate <NSObject>
+
+- (void)aboutViewDidFinish;
+
+@end
+
+@interface AboutViewController : UIViewController
+@property (nonatomic, weak) id <AboutViewControllerDelegate> delegate;
+
+- (IBAction)doneButtonPressed:(id)sender;
 
 @end
