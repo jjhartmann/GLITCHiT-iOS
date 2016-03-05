@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+// Delegate definition
+@protocol MenuTableViewDelegate <NSObject>
+
+- (void)finishedWithMenu;
+
+@end
+
 
 @interface MenuTableViewController : UITableViewController <UITableViewDelegate>
 @property (nonatomic, strong) MenuTableViewController *singleton;
 @property (nonatomic, strong) NSString *currentView;
+@property (nonatomic, weak) id <MenuTableViewDelegate> delegate;
 
 + (MenuTableViewController *) getController;
 + (BOOL) isValid;

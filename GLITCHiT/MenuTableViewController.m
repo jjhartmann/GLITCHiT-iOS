@@ -85,6 +85,9 @@
         default:
             break;
     }
+    
+    // Call calling class to close menu
+    [self.delegate finishedWithMenu];
 }
 
 

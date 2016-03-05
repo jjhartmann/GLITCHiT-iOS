@@ -88,6 +88,7 @@
     }
     
     self.slideMenuView = [MenuTableViewController getController];
+    self.slideMenuView.delegate = self;
     
     //self.menuView = [[UIView alloc] initWithFrame:CGRectMake(-menuWidth, 0, menuWidth, menuHeight)];
     self.menuView = self.slideMenuView.view;
@@ -204,6 +205,14 @@
 
 }
 
+
+
+#pragma mark -
+#pragma MenuViewController Delegate
+- (void)finishedWithMenu
+{
+    [self hideMenu:nil];
+}
 
 /*
 #pragma mark - Navigation
