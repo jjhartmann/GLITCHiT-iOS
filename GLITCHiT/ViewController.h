@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "SlideBaseViewController.h"
 
 @interface ViewController : SlideBaseViewController
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
+
+// Camera View
+@property AVCaptureVideoPreviewLayer *capturePreviewLayer;
+@property AVCaptureSession *captureSession;
 
 - (IBAction)cameraButtonActivated:(id)sender;
 @end
