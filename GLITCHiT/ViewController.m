@@ -34,7 +34,7 @@
     }
     
     NSError *error = nil;
-    AVCaptureDeviceInput *captureInput = [AVCaptureDeviceInput deviceInputWithDevice:caputreDevice error:&error];
+    AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:caputreDevice error:&error];
     if (error)
     {
         NSLog(@"Error: Failed to create device input %@", error);
@@ -42,14 +42,14 @@
     }
     
     // Check caputure session can accept input
-    if (![self.captureSession canAddInput:captureInput])
+    if (![self.captureSession canAddInput:deviceInput])
     {
         NSLog(@"Error: Capture session can not accept input");
         abort();
     }
     
     // Set Input
-    [self.captureSession addInput:captureInput];
+    [self.captureSession addInput:deviceInput];
     
     // Configure Preview layer
     self.capturePreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession];

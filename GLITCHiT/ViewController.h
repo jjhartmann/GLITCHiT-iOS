@@ -17,6 +17,7 @@
 // Camera View
 @property AVCaptureVideoPreviewLayer *capturePreviewLayer;
 @property AVCaptureSession *captureSession;
+@property AVCaptureVideoDataOutput *videoDataOutput;
 
 - (IBAction)cameraButtonActivated:(id)sender;
 @end
