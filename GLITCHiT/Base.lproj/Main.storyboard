@@ -248,7 +248,7 @@
                     <connections>
                         <segue destination="OcE-9J-6tf" kind="show" identifier="aboutViewSegue" id="O2v-JC-Ppx"/>
                         <segue destination="xZt-iW-pbE" kind="show" identifier="loadImageViewSegue" id="6Cu-gF-lWU"/>
-                        <segue destination="3Oa-ve-fR1" kind="show" id="sto-9F-wbo"/>
+                        <segue destination="3Oa-ve-fR1" kind="show" identifier="settingsViewSegue" id="sto-9F-wbo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xMC-VB-TAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
