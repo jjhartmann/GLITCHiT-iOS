@@ -61,29 +61,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="utP-9x-p0h">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About GLITCHiT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmo-2a-RZg">
                                 <rect key="frame" x="20" y="28" width="125" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jve-xz-gXO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jve-xz-gXO">
                                 <rect key="frame" x="20" y="82" width="560" height="423"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Jve-xz-gXO" secondAttribute="height" multiplier="560:423" id="8fe-Qc-ej9"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf">
+                                    <fragment content="GLITCHiT is devloped by J. J. Hartmann @ www.jjhartmann.com">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <font key="NSFont" size="36" name="HelveticaNeue-UltraLight"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDE-Df-V8N">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDE-Df-V8N">
                                 <rect key="frame" x="539" y="550" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
@@ -94,16 +97,58 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qmo-2a-RZg" firstAttribute="top" secondItem="mYd-wr-AsZ" secondAttribute="bottom" constant="8" id="0k1-WG-l0T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BDE-Df-V8N" secondAttribute="trailing" constant="4" id="7PS-Wi-M2O"/>
+                            <constraint firstItem="RLW-kN-hCX" firstAttribute="top" secondItem="utP-9x-p0h" secondAttribute="bottom" id="82l-A5-4HP"/>
                             <constraint firstItem="Jve-xz-gXO" firstAttribute="trailing" secondItem="OkL-wT-6JU" secondAttribute="trailingMargin" id="9kt-AJ-j8d"/>
                             <constraint firstItem="Jve-xz-gXO" firstAttribute="leading" secondItem="OkL-wT-6JU" secondAttribute="leadingMargin" id="CdL-uU-L0G"/>
+                            <constraint firstItem="utP-9x-p0h" firstAttribute="top" secondItem="OkL-wT-6JU" secondAttribute="topMargin" id="D6k-Ei-xk0"/>
                             <constraint firstItem="Jve-xz-gXO" firstAttribute="top" secondItem="qmo-2a-RZg" secondAttribute="bottom" constant="33" id="Jm1-ud-p97"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="utP-9x-p0h" secondAttribute="trailing" constant="-20" id="TBC-WK-MsA"/>
                             <constraint firstItem="qmo-2a-RZg" firstAttribute="leading" secondItem="OkL-wT-6JU" secondAttribute="leadingMargin" id="THf-DT-bzN"/>
+                            <constraint firstItem="utP-9x-p0h" firstAttribute="leading" secondItem="OkL-wT-6JU" secondAttribute="leadingMargin" constant="-20" id="pWo-aA-FPB"/>
+                            <constraint firstItem="RLW-kN-hCX" firstAttribute="top" secondItem="BDE-Df-V8N" secondAttribute="bottom" constant="20" id="yGb-XA-c04"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYV-vl-YWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="479"/>
+            <point key="canvasLocation" x="1468" y="317"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7V7-fY-kVL">
+            <objects>
+                <viewController id="3Oa-ve-fR1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fPH-XR-GDh"/>
+                        <viewControllerLayoutGuide type="bottom" id="fTq-tY-GDx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OlS-Sf-wmO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DNw-bN-M4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1468" y="1006"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6ph-cJ-WJF">
+            <objects>
+                <viewController id="xZt-iW-pbE" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tc2-a2-8yi"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZFv-Ak-Y6S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uOn-U8-A9c">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pBR-j6-XXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1468" y="1700"/>
         </scene>
         <!--Menu Table View Controller-->
         <scene sceneID="zWv-td-8fU">
@@ -206,6 +251,8 @@
                     </tableView>
                     <connections>
                         <segue destination="OcE-9J-6tf" kind="show" identifier="aboutViewSegue" id="O2v-JC-Ppx"/>
+                        <segue destination="xZt-iW-pbE" kind="show" identifier="loadImageViewSegue" id="6Cu-gF-lWU"/>
+                        <segue destination="3Oa-ve-fR1" kind="show" id="sto-9F-wbo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xMC-VB-TAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
