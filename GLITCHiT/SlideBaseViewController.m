@@ -214,6 +214,29 @@
     [self hideMenu:nil];
 }
 
+- (void)menuItemIsSelected:(NSInteger)index
+{
+    switch (index) {
+        case 0: // Camera
+            
+            break;
+        case 1: // Load image
+            
+            break;
+        case 2: // Purchase
+            
+            break;
+        case 3: // Settings
+            
+            break;
+        case 4: // About
+            
+            break;
+        default:
+            break;
+    }
+}
+
 /*
 #pragma mark - Navigation
 
