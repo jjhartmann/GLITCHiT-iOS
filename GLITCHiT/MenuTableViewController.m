@@ -80,7 +80,9 @@
         case 4:
             NSLog(@"About");
             if (![self.currentView  isEqual: @"AboutView"])
-                [self performSegueWithIdentifier:@"aboutViewSegue" sender:self];
+            {
+                [self.delegate menuItemIsSelected:4];
+                [self performSegueWithIdentifier:@"aboutViewSegue" sender:self];            }
             break;
         default:
             break;
@@ -88,6 +90,29 @@
     
     // Call calling class to close menu
     [self.delegate finishedWithMenu];
+}
+
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"aboutViewSegue"])
+    {
+        AboutViewController *abvc = (AboutViewController *)[segue destinationViewController];
+        abvc.delegate = self;
+    }
+    
+    
+}
+
+#pragma mark -
+#pragma mark Delegate Imeplementations
+
+- (void)aboutViewDidFinish
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -135,14 +160,8 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
 
 @end
