@@ -128,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="1468" y="1006"/>
         </scene>
-        <!--View Controller-->
+        <!--Load Image View Controller-->
         <scene sceneID="6ph-cJ-WJF">
             <objects>
-                <viewController id="xZt-iW-pbE" sceneMemberID="viewController">
+                <viewController id="xZt-iW-pbE" customClass="LoadImageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tc2-a2-8yi"/>
                         <viewControllerLayoutGuide type="bottom" id="ZFv-Ak-Y6S"/>
