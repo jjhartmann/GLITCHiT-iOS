@@ -27,26 +27,42 @@
                                     <outletCollection property="gestureRecognizers" destination="XQr-65-4EV" appends="YES" id="xMw-XA-ESX"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKX-s9-SpX">
-                                <rect key="frame" x="230" y="480" width="140" height="100"/>
-                                <state key="normal" image="cameraButton">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rnJ-ZG-q1n">
+                                <rect key="frame" x="0.0" y="441" width="600" height="159"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="cameraButtonRing" translatesAutoresizingMaskIntoConstraints="NO" id="KVV-4o-600">
+                                        <rect key="frame" x="255" y="35" width="90" height="90"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fb9-Oo-7CD">
+                                        <rect key="frame" x="263" y="42" width="75" height="75"/>
+                                        <state key="normal" image="cameraButton"/>
+                                        <connections>
+                                            <action selector="cameraButtonActivated:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GM7-Aw-5P5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fb9-Oo-7CD" firstAttribute="centerY" secondItem="rnJ-ZG-q1n" secondAttribute="centerY" id="Hn3-h6-flA"/>
+                                    <constraint firstItem="KVV-4o-600" firstAttribute="centerY" secondItem="rnJ-ZG-q1n" secondAttribute="centerY" id="NaP-6d-0FM"/>
+                                    <constraint firstItem="KVV-4o-600" firstAttribute="centerX" secondItem="rnJ-ZG-q1n" secondAttribute="centerX" id="jzu-3N-J2t"/>
+                                    <constraint firstItem="fb9-Oo-7CD" firstAttribute="centerX" secondItem="rnJ-ZG-q1n" secondAttribute="centerX" id="zca-rr-Vqh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nKX-s9-SpX" secondAttribute="bottom" constant="20" id="CTk-6A-phR"/>
-                            <constraint firstItem="nKX-s9-SpX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EOY-xE-3vz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rnJ-ZG-q1n" secondAttribute="bottom" id="5JB-G8-ubI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rnJ-ZG-q1n" secondAttribute="trailing" constant="-20" id="Hn7-8P-vah"/>
                             <constraint firstAttribute="trailingMargin" secondItem="a8m-fp-zVo" secondAttribute="trailing" constant="-20" id="KXV-OO-nhj"/>
                             <constraint firstItem="a8m-fp-zVo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="LVZ-i4-MqC"/>
                             <constraint firstItem="a8m-fp-zVo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="UVG-cX-t41"/>
+                            <constraint firstItem="rnJ-ZG-q1n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="hL6-KW-Pvb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a8m-fp-zVo" secondAttribute="bottom" id="s8k-e0-3cZ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cameraButton" destination="nKX-s9-SpX" id="dyu-57-mjO"/>
+                        <outlet property="cameraButton" destination="fb9-Oo-7CD" id="dFe-8w-TJu"/>
                         <outlet property="imageView" destination="a8m-fp-zVo" id="6K8-Ge-jMp"/>
                     </connections>
                 </viewController>
@@ -317,7 +333,8 @@
     <resources>
         <image name="IMG_20150720_015918" width="1224" height="1632"/>
         <image name="button_destroyed_01_HighRes" width="170" height="170"/>
-        <image name="cameraButton" width="81" height="81"/>
+        <image name="cameraButton" width="109" height="109"/>
+        <image name="cameraButtonRing" width="140" height="140"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
