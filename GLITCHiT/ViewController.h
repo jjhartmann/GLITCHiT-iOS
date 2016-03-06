@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "SlideBaseViewController.h"
+#import "CameraPreviewView.h"
 
 @interface ViewController : SlideBaseViewController
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
+//@property (weak, nonatomic) IBOutlet CameraPreviewView *previewView;
 
 // Camera View
 @property (nonatomic) AVCaptureVideoPreviewLayer *capturePreviewLayer;

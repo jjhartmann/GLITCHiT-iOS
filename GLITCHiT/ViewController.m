@@ -44,8 +44,8 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
         self.captureSession = [AVCaptureSession new];
     }
     
-    // Setup Preview Session
-    self.capturePreviewLayer.session = self.captureSession;
+//    // Setup Preview Session
+//    self.capturePreviewLayer.session = self.captureSession;
     
     self.sessionQueue = dispatch_queue_create("session queue", DISPATCH_QUEUE_SERIAL);
     setupResult = AVCamSetupResultSuccess;
@@ -86,7 +86,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
         AVCaptureDevice *captureDevice = [self getDeviceWithType:AVMediaTypeVideo preferringPosition:AVCaptureDevicePositionBack];
         AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
         
-        if (error)
+        if (!deviceInput)
         {
             NSLog(@"Error: AVCaptureDeviceInput failed to initialize - %@", error);
         }
@@ -100,13 +100,16 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
             [self.captureSession addInput:deviceInput];
             self.deviceInput = deviceInput;
             
+            
+            self.capturePreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession];
+            self.capturePreviewLayer.videoGravity = AVLayerVideoGravityResizeAspect;
+            
             // Dispatch to main thread for UIView configuration
-//            dispatch_async(dispatch_get_main_queue(), ^(void){
-//                // Get layer and enforce portrait mode.
-//                AVCaptureVideoPreviewLayer *previewLayer = (AVCaptureVideoPreviewLayer *)self.imageView.layer;
-//                previewLayer.connection.videoOrientation = UIInterfaceOrientationPortrait;
-//                
-//            });
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                // set preview capture as sublayer
+                [self.capturePreviewLayer setFrame:CGRectMake(0, 0, self.imageView.frame.size.width, self.imageView.frame.size.height)];
+                [self.imageView.layer addSublayer:self.capturePreviewLayer];
+            });
         }
         else
         {
