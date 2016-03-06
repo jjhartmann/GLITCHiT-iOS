@@ -24,6 +24,9 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 
 @implementation ViewController
 
+#pragma mark -
+#pragma Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -89,6 +92,30 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (AVCaptureDevice *)getDiviceWithType:(NSString *)mediaType preferringPosition:(AVCaptureDevicePosition)position
+{
+    // Get array of avaliable devices from camera
+    NSArray *devices = [AVCaptureDevice devicesWithMediaType:mediaType];
+    AVCaptureDevice *captureDevice = devices.firstObject;
+    
+    
+    // Search through devices to find desired camera
+    for (AVCaptureDevice *d in devices)
+    {
+        if (d.position == position)
+        {
+            captureDevice = d;
+            break;
+        }
+    }
+    
+    return captureDevice;
+}
+
+#pragma mark -
+#pragma UI Element Actions
 
 - (IBAction)cameraButtonActivated:(id)sender {
 }

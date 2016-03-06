@@ -23,5 +23,6 @@
 
 
 - (IBAction)cameraButtonActivated:(id)sender;
+- (AVCaptureDevice *)getDiviceWithType:(NSString *)mediaType preferringPosition:(AVCaptureDevicePosition)position;
 @end
 
