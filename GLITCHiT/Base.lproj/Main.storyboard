@@ -208,15 +208,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GLITCHiT is devloped by J. J. Hartmann @ www.jjhartmann.com" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jve-xz-gXO">
-                                <rect key="frame" x="20" y="64" width="560" height="423"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Jve-xz-gXO" secondAttribute="height" multiplier="560:423" id="8fe-Qc-ej9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="36"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDE-Df-V8N">
                                 <rect key="frame" x="519" y="535" width="57" height="49"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="31"/>
@@ -227,6 +218,15 @@
                                     <action selector="doneButtonPressed:" destination="OcE-9J-6tf" eventType="touchUpInside" id="F5k-Wy-8jV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GLITCHiT is devloped by J. J. Hartmann @ www.jjhartmann.com" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jve-xz-gXO">
+                                <rect key="frame" x="20" y="110" width="560" height="377"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Jve-xz-gXO" secondAttribute="height" multiplier="560:423" constant="60.898345153664309" id="8fe-Qc-ej9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="36"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -236,7 +236,7 @@
                             <constraint firstItem="Jve-xz-gXO" firstAttribute="trailing" secondItem="OkL-wT-6JU" secondAttribute="trailingMargin" id="9kt-AJ-j8d"/>
                             <constraint firstItem="Jve-xz-gXO" firstAttribute="leading" secondItem="OkL-wT-6JU" secondAttribute="leadingMargin" id="CdL-uU-L0G"/>
                             <constraint firstItem="utP-9x-p0h" firstAttribute="top" secondItem="OkL-wT-6JU" secondAttribute="topMargin" id="D6k-Ei-xk0"/>
-                            <constraint firstItem="Jve-xz-gXO" firstAttribute="top" secondItem="qmo-2a-RZg" secondAttribute="bottom" constant="-13" id="Jm1-ud-p97"/>
+                            <constraint firstItem="Jve-xz-gXO" firstAttribute="top" secondItem="qmo-2a-RZg" secondAttribute="bottom" constant="33" id="Jm1-ud-p97"/>
                             <constraint firstAttribute="trailingMargin" secondItem="utP-9x-p0h" secondAttribute="trailing" constant="-20" id="TBC-WK-MsA"/>
                             <constraint firstItem="qmo-2a-RZg" firstAttribute="leading" secondItem="OkL-wT-6JU" secondAttribute="leadingMargin" id="THf-DT-bzN"/>
                             <constraint firstItem="utP-9x-p0h" firstAttribute="leading" secondItem="OkL-wT-6JU" secondAttribute="leadingMargin" constant="-20" id="pWo-aA-FPB"/>
