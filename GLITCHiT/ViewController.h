@@ -11,7 +11,13 @@
 #import "SlideBaseViewController.h"
 #import "CameraPreviewView.h"
 
+#define TIMEOUT_USER_INTERACTION 5
+
 @interface ViewController : SlideBaseViewController
+// Idle Timer
+@property NSTimer *idleTimer;
+
+// UI Outlets
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButtonRing;
@@ -43,5 +49,8 @@
 - (void)addObservers;
 - (IBAction)respondToPinchGesture:(UIPinchGestureRecognizer *)sender;
 
+// Timer method
+- (void)resetIdleTimer;
+- (void)idleTimerExceeded;
 @end
 

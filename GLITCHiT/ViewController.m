@@ -278,4 +278,37 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     return YES;
 }
 
+- (void)resetIdleTimer
+{
+    if (!self.idleTimer)
+    {
+        self.idleTimer = [NSTimer scheduledTimerWithTimeInterval:TIMEOUT_USER_INTERACTION target:self selector:@selector(idleTimerExceeded) userInfo:nil repeats:NO];
+        [[NSRunLoop currentRunLoop] addTimer:self.idleTimer forMode:NSDefaultRunLoopMode];
+    }
+    else
+    {
+        if (fabs([self.idleTimer.fireDate timeIntervalSinceNow]) < TIMEOUT_USER_INTERACTION - 1.0)
+        {
+            self.idleTimer.fireDate = [NSDate dateWithTimeIntervalSinceNow:TIMEOUT_USER_INTERACTION];
+        }
+    }
+}
+
+- (void)idleTimerExceeded
+{
+    self.idleTimer = nil;
+    // Shrink and fade UI Camera Buttons.
+    NSLog(@"IDLETIMER: Activated Shrink Buttons");
+    
+    
+    
+    
+}
+
+- (UIResponder *)nextResponder
+{
+    [self resetIdleTimer];
+    return [super nextResponder];
+}
+
 @end
