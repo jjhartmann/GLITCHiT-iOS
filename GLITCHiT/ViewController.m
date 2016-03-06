@@ -76,10 +76,50 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
             return; // Do not have permission to setup camera
         }
         
+        // Setup capture device and inputs
         NSError *error;
+        AVCaptureDevice *captureDevice = [self getDeviceWithType:AVMediaTypeVideo preferringPosition:AVCaptureDevicePositionBack];
+        AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
         
+        if (error)
+        {
+            NSLog(@"Error: AVCaptureDeviceInput failed to initialize - %@", error);
+        }
         
-    
+        // Begin Atomic device configuration
+        [self.captureSession beginConfiguration];
+        
+        // Add device input
+        if ([self.captureSession canAddInput:deviceInput])
+        {
+            [self.captureSession addInput:deviceInput];
+            self.deviceInput = deviceInput;
+            
+            // Dispatch to main thread for UIView configuration
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                // Get layer and enforce portrait mode.
+                AVCaptureVideoPreviewLayer *previewLayer = (AVCaptureVideoPreviewLayer *)self.imageView.layer;
+                previewLayer.connection.videoOrientation = UIInterfaceOrientationPortrait;
+                
+            });
+        }
+        else
+        {
+            NSLog(@"Capture Session Configuration Failed.");
+            setupResult = AVCamSetupResultSessionConfigurationFailed;
+        }
+        
+        // Setup still Image Capture Output
+        AVCaptureStillImageOutput *stillImageOutput = [AVCaptureStillImageOutput new];
+        if ([self.captureSession canAddOutput:stillImageOutput])
+        {
+            stillImageOutput.outputSettings = @{AVVideoCodecKey: AVVideoCodecJPEG};
+            [self.captureSession addOutput:stillImageOutput];
+            self.stillImageOutput = stillImageOutput;
+        }
+        
+        // commit the configuration settings.
+        [self.captureSession commitConfiguration];
     });
     
     
@@ -94,7 +134,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 }
 
 
-- (AVCaptureDevice *)getDiviceWithType:(NSString *)mediaType preferringPosition:(AVCaptureDevicePosition)position
+- (AVCaptureDevice *)getDeviceWithType:(NSString *)mediaType preferringPosition:(AVCaptureDevicePosition)position
 {
     // Get array of avaliable devices from camera
     NSArray *devices = [AVCaptureDevice devicesWithMediaType:mediaType];
