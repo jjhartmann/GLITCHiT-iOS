@@ -22,6 +22,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 
 @interface ViewController (){
     BOOL isUsingFrontCamera;
+    BOOL shouldScaleCameraButtons;
     AVCamSetupResult setupResult;
 }
 
@@ -41,6 +42,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     
     // CAMERA
     isUsingFrontCamera = NO;
+    shouldScaleCameraButtons = NO;
     
     // Setup capture session
     if (self.captureSession == nil)
@@ -300,14 +302,36 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     // Shrink and fade UI Camera Buttons.
     NSLog(@"IDLETIMER: Activated Shrink Buttons");
     
+    [UIView animateWithDuration:0.75 animations:^(void){
+        self.cameraButton.transform = CGAffineTransformMakeScale(.05, .05);
+        self.flashButton.transform = CGAffineTransformMakeScale(.05, .05);
+        self.flashButtonRing.transform = CGAffineTransformMakeScale(.05, .05);
+        self.switchCameraButton.transform = CGAffineTransformMakeScale(.05, .05);
+        self.switchCameraButtonRing.transform = CGAffineTransformMakeScale(.05, .05);
+        
+    }];
     
-    
-    
+    shouldScaleCameraButtons = YES;
 }
 
 - (UIResponder *)nextResponder
 {
     [self resetIdleTimer];
+    
+    if (shouldScaleCameraButtons)
+    {
+        [UIView animateWithDuration:0.75 animations:^(void){
+            self.cameraButton.transform = CGAffineTransformMakeScale(1.0, 1.0);
+            self.flashButton.transform = CGAffineTransformMakeScale(1.0, 1.0);
+            self.flashButtonRing.transform = CGAffineTransformMakeScale(1.0, 1.0);
+            self.switchCameraButton.transform = CGAffineTransformMakeScale(1.0, 1.0);
+            self.switchCameraButtonRing.transform = CGAffineTransformMakeScale(1.0, 1.0);
+            
+        }];
+        shouldScaleCameraButtons = NO;
+    }
+    
+    
     return [super nextResponder];
 }
 

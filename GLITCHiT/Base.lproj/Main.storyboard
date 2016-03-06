@@ -27,10 +27,10 @@
                                     <outletCollection property="gestureRecognizers" destination="XQr-65-4EV" appends="YES" id="xMw-XA-ESX"/>
                                 </connections>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rnJ-ZG-q1n">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnJ-ZG-q1n">
                                 <rect key="frame" x="0.0" y="441" width="600" height="159"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpS-ka-caR">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpS-ka-caR">
                                         <rect key="frame" x="263" y="42" width="75" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="Ttj-Yf-fQW"/>
@@ -41,7 +41,7 @@
                                             <action selector="cameraButtonActivated:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AeW-LK-iTP"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fb9-Oo-7CD">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fb9-Oo-7CD">
                                         <rect key="frame" x="268" y="47" width="65" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="Tnm-sN-zL6"/>
@@ -52,15 +52,18 @@
                                             <action selector="cameraButtonActivated:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GM7-Aw-5P5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3t1-6t-8eG">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3t1-6t-8eG" userLabel="Switch Camera Ring">
                                         <rect key="frame" x="342" y="60" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="2A1-fl-Ucs"/>
                                             <constraint firstAttribute="width" constant="40" id="qEO-UA-5V1"/>
                                         </constraints>
                                         <state key="normal" image="Oval 1"/>
+                                        <connections>
+                                            <action selector="switchCameraActivited:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rze-7n-c0E"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zv9-A7-2ey">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zv9-A7-2ey">
                                         <rect key="frame" x="348" y="66" width="28" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="IN7-BZ-Th1"/>
@@ -71,15 +74,18 @@
                                             <action selector="switchCameraActivited:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z3k-vj-GbK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zij-1b-I3y">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zij-1b-I3y" userLabel="Flash Button Ring">
                                         <rect key="frame" x="218" y="60" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="626-Ii-fmF"/>
                                             <constraint firstAttribute="width" constant="40" id="BOy-pe-oDf"/>
                                         </constraints>
                                         <state key="normal" image="Oval 1"/>
+                                        <connections>
+                                            <action selector="flashButtonActivated:" destination="BYZ-38-t0r" eventType="touchUpInside" id="97u-18-cjl"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7M-XE-5mU">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7M-XE-5mU">
                                         <rect key="frame" x="224" y="66" width="28" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="Ou2-B6-16M"/>
@@ -97,6 +103,7 @@
                                     <constraint firstItem="3t1-6t-8eG" firstAttribute="centerY" secondItem="rnJ-ZG-q1n" secondAttribute="centerY" id="Agt-UL-dNo"/>
                                     <constraint firstItem="PpS-ka-caR" firstAttribute="leading" secondItem="U7M-XE-5mU" secondAttribute="trailing" constant="11" id="F0r-fE-cF9"/>
                                     <constraint firstItem="fb9-Oo-7CD" firstAttribute="centerY" secondItem="rnJ-ZG-q1n" secondAttribute="centerY" id="Hn3-h6-flA"/>
+                                    <constraint firstAttribute="height" constant="159" id="LI6-H6-Hqo"/>
                                     <constraint firstItem="PpS-ka-caR" firstAttribute="centerY" secondItem="rnJ-ZG-q1n" secondAttribute="centerY" id="NHh-qc-P0e"/>
                                     <constraint firstItem="PpS-ka-caR" firstAttribute="leading" secondItem="Zij-1b-I3y" secondAttribute="trailing" constant="5" id="Q8B-VO-Xop"/>
                                     <constraint firstItem="3t1-6t-8eG" firstAttribute="leading" secondItem="PpS-ka-caR" secondAttribute="trailing" constant="4" id="gEy-4C-XEa"/>
@@ -123,8 +130,10 @@
                         <outlet property="cameraButton" destination="fb9-Oo-7CD" id="5iL-FP-QC4"/>
                         <outlet property="cameraButtonRing" destination="PpS-ka-caR" id="Rd6-Lw-EnX"/>
                         <outlet property="flashButton" destination="U7M-XE-5mU" id="Kfn-0F-KeA"/>
+                        <outlet property="flashButtonRing" destination="Zij-1b-I3y" id="Sdb-5c-AgE"/>
                         <outlet property="imageView" destination="a8m-fp-zVo" id="6K8-Ge-jMp"/>
                         <outlet property="switchCameraButton" destination="zv9-A7-2ey" id="CRh-Ne-M2R"/>
+                        <outlet property="switchCameraButtonRing" destination="3t1-6t-8eG" id="FTZ-wj-Oum"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -193,14 +202,14 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About GLITCHiT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmo-2a-RZg">
-                                <rect key="frame" x="20" y="28" width="281" height="67"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About GLITCHiT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmo-2a-RZg">
+                                <rect key="frame" x="20" y="28" width="267" height="49"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="41"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="GLITCHiT is devloped by J. J. Hartmann @ www.jjhartmann.com" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jve-xz-gXO">
-                                <rect key="frame" x="20" y="82" width="560" height="423"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GLITCHiT is devloped by J. J. Hartmann @ www.jjhartmann.com" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jve-xz-gXO">
+                                <rect key="frame" x="20" y="64" width="560" height="423"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Jve-xz-gXO" secondAttribute="height" multiplier="560:423" id="8fe-Qc-ej9"/>
                                 </constraints>
@@ -208,8 +217,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDE-Df-V8N">
-                                <rect key="frame" x="470" y="535" width="106" height="49"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDE-Df-V8N">
+                                <rect key="frame" x="519" y="535" width="57" height="49"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="31"/>
                                 <state key="normal" title="EXIT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -227,11 +236,11 @@
                             <constraint firstItem="Jve-xz-gXO" firstAttribute="trailing" secondItem="OkL-wT-6JU" secondAttribute="trailingMargin" id="9kt-AJ-j8d"/>
                             <constraint firstItem="Jve-xz-gXO" firstAttribute="leading" secondItem="OkL-wT-6JU" secondAttribute="leadingMargin" id="CdL-uU-L0G"/>
                             <constraint firstItem="utP-9x-p0h" firstAttribute="top" secondItem="OkL-wT-6JU" secondAttribute="topMargin" id="D6k-Ei-xk0"/>
-                            <constraint firstItem="Jve-xz-gXO" firstAttribute="top" secondItem="qmo-2a-RZg" secondAttribute="bottom" constant="33" id="Jm1-ud-p97"/>
+                            <constraint firstItem="Jve-xz-gXO" firstAttribute="top" secondItem="qmo-2a-RZg" secondAttribute="bottom" constant="-13" id="Jm1-ud-p97"/>
                             <constraint firstAttribute="trailingMargin" secondItem="utP-9x-p0h" secondAttribute="trailing" constant="-20" id="TBC-WK-MsA"/>
                             <constraint firstItem="qmo-2a-RZg" firstAttribute="leading" secondItem="OkL-wT-6JU" secondAttribute="leadingMargin" id="THf-DT-bzN"/>
                             <constraint firstItem="utP-9x-p0h" firstAttribute="leading" secondItem="OkL-wT-6JU" secondAttribute="leadingMargin" constant="-20" id="pWo-aA-FPB"/>
-                            <constraint firstItem="RLW-kN-hCX" firstAttribute="top" secondItem="BDE-Df-V8N" secondAttribute="bottom" constant="20" id="yGb-XA-c04"/>
+                            <constraint firstItem="RLW-kN-hCX" firstAttribute="top" secondItem="BDE-Df-V8N" secondAttribute="bottom" constant="16" id="yGb-XA-c04"/>
                         </constraints>
                     </view>
                 </viewController>
