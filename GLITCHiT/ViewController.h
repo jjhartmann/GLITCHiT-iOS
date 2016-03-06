@@ -11,7 +11,7 @@
 #import "SlideBaseViewController.h"
 #import "CameraPreviewView.h"
 
-#define TIMEOUT_USER_INTERACTION 5
+#define TIMEOUT_USER_INTERACTION 6
 
 @interface ViewController : SlideBaseViewController
 // Idle Timer
@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *cameraButtonRing;
 @property (weak, nonatomic) IBOutlet UIButton *switchCameraButton;
 @property (weak, nonatomic) IBOutlet UIButton *flashButton;
+@property (weak, nonatomic) IBOutlet UIButton *switchCameraButtonRing;
+@property (weak, nonatomic) IBOutlet UIButton *flashButtonRing;
 
 
 // Camera View
