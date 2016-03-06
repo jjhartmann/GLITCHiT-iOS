@@ -8,6 +8,11 @@
 
 #import "ViewController.h"
 
+// Self Referencing static vars for context
+static void *ContextSesssionRunning = &ContextSesssionRunning;
+static void *ContextStillImageCaputuring = &ContextStillImageCaputuring;
+
+
 // ENUM for camera status
 typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     AVCamSetupResultSuccess,
@@ -96,12 +101,12 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
             self.deviceInput = deviceInput;
             
             // Dispatch to main thread for UIView configuration
-            dispatch_async(dispatch_get_main_queue(), ^(void){
-                // Get layer and enforce portrait mode.
-                AVCaptureVideoPreviewLayer *previewLayer = (AVCaptureVideoPreviewLayer *)self.imageView.layer;
-                previewLayer.connection.videoOrientation = UIInterfaceOrientationPortrait;
-                
-            });
+//            dispatch_async(dispatch_get_main_queue(), ^(void){
+//                // Get layer and enforce portrait mode.
+//                AVCaptureVideoPreviewLayer *previewLayer = (AVCaptureVideoPreviewLayer *)self.imageView.layer;
+//                previewLayer.connection.videoOrientation = UIInterfaceOrientationPortrait;
+//                
+//            });
         }
         else
         {
@@ -121,11 +126,32 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
         // commit the configuration settings.
         [self.captureSession commitConfiguration];
     });
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
+    // Dispatch to GCD
+    dispatch_async(self.sessionQueue, ^(void)
+    {
+        switch (setupResult) {
+            case AVCamSetupResultSuccess:
+            {
+                // Setup Observers
+                [self addObservers];
+                // Setup camera
+                [self.captureSession startRunning];
+                break;
+            }
+                
+            default:
+                NSLog(@"ERROR: Failed to setup the camera");
+                // TODO: Display alert status.
+                break;
+        }
     
-    
-    
-    
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -154,8 +180,19 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     return captureDevice;
 }
 
+#pragma mark KVO Stuff
+- (void)addObservers
+{
+    // Add observers on session and image capture
+    [self.captureSession addObserver:self forKeyPath:@"running" options:NSKeyValueObservingOptionNew context:ContextSesssionRunning];
+    [self.stillImageOutput addObserver:self forKeyPath:@"capturingStillImage" options:NSKeyValueObservingOptionNew context:ContextStillImageCaputuring];
+    
+    // TODO: Add selectors
+}
+
+
 #pragma mark -
-#pragma UI Element Actions
+#pragma mark UI Element Actions
 
 - (IBAction)cameraButtonActivated:(id)sender {
 }
