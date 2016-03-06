@@ -30,21 +30,49 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rnJ-ZG-q1n">
                                 <rect key="frame" x="0.0" y="441" width="600" height="159"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="cameraButtonRing" translatesAutoresizingMaskIntoConstraints="NO" id="KVV-4o-600">
-                                        <rect key="frame" x="255" y="35" width="90" height="90"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="cameraButtonRing" translatesAutoresizingMaskIntoConstraints="NO" id="KVV-4o-600">
+                                        <rect key="frame" x="260" y="40" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="UFY-Ds-TBk"/>
+                                            <constraint firstAttribute="width" constant="80" id="srQ-oS-ucm"/>
+                                        </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fb9-Oo-7CD">
-                                        <rect key="frame" x="263" y="42" width="75" height="75"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fb9-Oo-7CD">
+                                        <rect key="frame" x="268" y="47" width="65" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="Tnm-sN-zL6"/>
+                                            <constraint firstAttribute="height" constant="65" id="v6b-cA-vtk"/>
+                                        </constraints>
                                         <state key="normal" image="cameraButton"/>
                                         <connections>
                                             <action selector="cameraButtonActivated:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GM7-Aw-5P5"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zv9-A7-2ey">
+                                        <rect key="frame" x="348" y="66" width="28" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="IN7-BZ-Th1"/>
+                                            <constraint firstAttribute="width" constant="28" id="sFb-ng-P36"/>
+                                        </constraints>
+                                        <state key="normal" image="Switch Camera"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7M-XE-5mU">
+                                        <rect key="frame" x="224" y="66" width="28" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="Ou2-B6-16M"/>
+                                            <constraint firstAttribute="width" constant="28" id="ife-Bv-xvs"/>
+                                        </constraints>
+                                        <state key="normal" image="Flash On"/>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="zv9-A7-2ey" firstAttribute="centerY" secondItem="rnJ-ZG-q1n" secondAttribute="centerY" id="2VD-XO-Oqc"/>
                                     <constraint firstItem="fb9-Oo-7CD" firstAttribute="centerY" secondItem="rnJ-ZG-q1n" secondAttribute="centerY" id="Hn3-h6-flA"/>
                                     <constraint firstItem="KVV-4o-600" firstAttribute="centerY" secondItem="rnJ-ZG-q1n" secondAttribute="centerY" id="NaP-6d-0FM"/>
+                                    <constraint firstItem="zv9-A7-2ey" firstAttribute="leading" secondItem="KVV-4o-600" secondAttribute="trailing" constant="8" id="Sy7-z5-83q"/>
+                                    <constraint firstItem="KVV-4o-600" firstAttribute="leading" secondItem="U7M-XE-5mU" secondAttribute="trailing" constant="8" id="hIp-gj-qcN"/>
                                     <constraint firstItem="KVV-4o-600" firstAttribute="centerX" secondItem="rnJ-ZG-q1n" secondAttribute="centerX" id="jzu-3N-J2t"/>
+                                    <constraint firstItem="U7M-XE-5mU" firstAttribute="centerY" secondItem="rnJ-ZG-q1n" secondAttribute="centerY" id="oAf-n8-Abv"/>
                                     <constraint firstItem="fb9-Oo-7CD" firstAttribute="centerX" secondItem="rnJ-ZG-q1n" secondAttribute="centerX" id="zca-rr-Vqh"/>
                                 </constraints>
                             </view>
@@ -62,7 +90,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cameraButton" destination="fb9-Oo-7CD" id="dFe-8w-TJu"/>
+                        <outlet property="cameraButton" destination="fb9-Oo-7CD" id="5iL-FP-QC4"/>
                         <outlet property="imageView" destination="a8m-fp-zVo" id="6K8-Ge-jMp"/>
                     </connections>
                 </viewController>
@@ -331,7 +359,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Flash On" width="22" height="39"/>
         <image name="IMG_20150720_015918" width="1224" height="1632"/>
+        <image name="Switch Camera" width="31" height="28"/>
         <image name="button_destroyed_01_HighRes" width="170" height="170"/>
         <image name="cameraButton" width="109" height="109"/>
         <image name="cameraButtonRing" width="140" height="140"/>
