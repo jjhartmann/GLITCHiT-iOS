@@ -59,6 +59,46 @@
             </objects>
             <point key="canvasLocation" x="565" y="479"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Ewr-P3-vZj">
+            <objects>
+                <viewController id="k9c-vi-7wF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f00-ln-Obr"/>
+                        <viewControllerLayoutGuide type="bottom" id="lbD-jd-Zdc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QCH-CC-Ocv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="12g-mh-CKL">
+                                <rect key="frame" x="0.0" y="-5" width="600" height="517"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kF-Iq-ijC">
+                                <rect key="frame" x="0.0" y="510" width="600" height="90"/>
+                                <color key="backgroundColor" red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRu-jT-wNv">
+                                <rect key="frame" x="215" y="422" width="170" height="170"/>
+                                <state key="normal" image="button_destroyed_01_HighRes"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="12g-mh-CKL" secondAttribute="trailing" constant="-20" id="HPc-Kt-QH6"/>
+                            <constraint firstItem="9kF-Iq-ijC" firstAttribute="leading" secondItem="QCH-CC-Ocv" secondAttribute="leadingMargin" constant="-20" id="QbB-hk-bQZ"/>
+                            <constraint firstItem="12g-mh-CKL" firstAttribute="top" secondItem="QCH-CC-Ocv" secondAttribute="topMargin" constant="-5" id="VuW-FF-xae"/>
+                            <constraint firstItem="12g-mh-CKL" firstAttribute="leading" secondItem="QCH-CC-Ocv" secondAttribute="leadingMargin" constant="-20" id="hCZ-eP-02f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9kF-Iq-ijC" secondAttribute="trailing" constant="-20" id="jTn-QX-U9G"/>
+                            <constraint firstItem="lbD-jd-Zdc" firstAttribute="top" secondItem="9kF-Iq-ijC" secondAttribute="bottom" id="qMI-YY-n2T"/>
+                            <constraint firstItem="lbD-jd-Zdc" firstAttribute="top" secondItem="12g-mh-CKL" secondAttribute="bottom" constant="88" id="vEu-lu-lnp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mxH-hc-6av" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="-180"/>
+        </scene>
         <!--About View Controller-->
         <scene sceneID="Cmc-bn-m8H">
             <objects>
@@ -92,9 +132,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDE-Df-V8N">
-                                <rect key="frame" x="515" y="550" width="61" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
-                                <state key="normal" title="Done"/>
+                                <rect key="frame" x="470" y="535" width="106" height="49"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="31"/>
+                                <state key="normal" title="EXIT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="doneButtonPressed:" destination="OcE-9J-6tf" eventType="touchUpInside" id="F5k-Wy-8jV"/>
                                 </connections>
@@ -274,6 +316,7 @@
     </scenes>
     <resources>
         <image name="IMG_20150720_015918" width="1224" height="1632"/>
+        <image name="button_destroyed_01_HighRes" width="170" height="170"/>
         <image name="cameraButton" width="81" height="81"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
