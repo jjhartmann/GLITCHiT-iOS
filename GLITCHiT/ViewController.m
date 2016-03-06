@@ -224,4 +224,48 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 
 - (IBAction)cameraButtonActivated:(id)sender {
 }
+
+- (IBAction)respondToPinchGesture:(UIPinchGestureRecognizer *)sender
+{
+    BOOL touchesAreOnImageView = YES;
+    NSInteger numTouches = [sender numberOfTouches];
+    for (NSInteger i = 0; i < numTouches; ++i)
+    {
+        CGPoint location = [sender locationOfTouch:i inView:self.imageView];
+        CGPoint convertedLoc = [self.imageView convertPoint:location fromView:self.imageView.superview];
+        
+        if ([self.imageView.layer containsPoint:convertedLoc])
+        {
+            touchesAreOnImageView = NO;
+            break;
+        }
+    }
+    
+    // If touches are in area, scale image and view.
+    if (touchesAreOnImageView)
+    {
+        self.effectScale = self.beginScale * sender.scale;
+        
+        if (self.effectScale < 1.0)
+            self.effectScale = 1.0;
+        
+        CGFloat maxCropFactor = [[self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo] videoMaxScaleAndCropFactor];
+        if (self.effectScale > maxCropFactor)
+            self.effectScale = maxCropFactor;
+        
+        [CATransaction begin];
+        [CATransaction setAnimationDuration:0.25];
+        [self.imageView.layer setAffineTransform:CGAffineTransformMakeScale(self.effectScale, self.effectScale)];
+        [CATransaction commit];
+    }
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if ( [gestureRecognizer isKindOfClass:[UIPinchGestureRecognizer class]] ) {
+        self.beginScale = self.effectScale;
+    }
+    return YES;
+}
+
 @end
