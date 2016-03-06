@@ -36,6 +36,10 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [super setCurrentView:@"MainCamera"];
+    
+    // Update UI
+    
+    // CAMERA
     isUsingFrontCamera = NO;
     
     // Setup capture session
@@ -223,6 +227,12 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 #pragma mark UI Element Actions
 
 - (IBAction)cameraButtonActivated:(id)sender {
+}
+
+- (IBAction)switchCameraActivited:(id)sender {
+}
+
+- (IBAction)flashButtonActivated:(id)sender {
 }
 
 - (IBAction)respondToPinchGesture:(UIPinchGestureRecognizer *)sender

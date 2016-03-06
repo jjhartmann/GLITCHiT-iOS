@@ -14,6 +14,10 @@
 @interface ViewController : SlideBaseViewController
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
+@property (weak, nonatomic) IBOutlet UIButton *cameraButtonRing;
+@property (weak, nonatomic) IBOutlet UIButton *switchCameraButton;
+@property (weak, nonatomic) IBOutlet UIButton *flashButton;
+
 
 // Camera View
 @property (nonatomic) AVCaptureVideoPreviewLayer *capturePreviewLayer;
@@ -28,7 +32,13 @@
 @property (nonatomic) CGFloat beginScale;
 @property (nonatomic) CGFloat effectScale;
 
+// UI Action Methods
 - (IBAction)cameraButtonActivated:(id)sender;
+- (IBAction)switchCameraActivited:(id)sender;
+- (IBAction)flashButtonActivated:(id)sender;
+
+
+// Camera Configuration Methods
 - (AVCaptureDevice *)getDeviceWithType:(NSString *)mediaType preferringPosition:(AVCaptureDevicePosition)position;
 - (void)addObservers;
 - (IBAction)respondToPinchGesture:(UIPinchGestureRecognizer *)sender;
