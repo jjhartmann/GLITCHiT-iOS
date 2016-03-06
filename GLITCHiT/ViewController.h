@@ -17,12 +17,13 @@
 // Camera View
 @property (nonatomic) AVCaptureVideoPreviewLayer *capturePreviewLayer;
 @property (nonatomic) AVCaptureSession *captureSession;
+@property (nonatomic) AVCaptureDeviceInput *deviceInput;
 @property (nonatomic) AVCaptureVideoDataOutput *videoDataOutput;
 @property (nonatomic) AVCaptureStillImageOutput *stillImageOutput;
 @property (nonatomic) dispatch_queue_t sessionQueue;
 
 
 - (IBAction)cameraButtonActivated:(id)sender;
-- (AVCaptureDevice *)getDiviceWithType:(NSString *)mediaType preferringPosition:(AVCaptureDevicePosition)position;
+- (AVCaptureDevice *)getDeviceWithType:(NSString *)mediaType preferringPosition:(AVCaptureDevicePosition)position;
 @end
 
