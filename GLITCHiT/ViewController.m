@@ -8,7 +8,17 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+// ENUM for camera status
+typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
+    AVCamSetupResultSuccess,
+    AVCamSetupResultCameraNotAuthorized,
+    AVCamSetupResultSessionConfigurationFailed
+};
+
+@interface ViewController (){
+    BOOL isUsingFrontCamera;
+    AVCamSetupResult setupResult;
+}
 
 @end
 
@@ -18,50 +28,57 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [super setCurrentView:@"MainCamera"];
-
+    isUsingFrontCamera = NO;
+    
     // Setup capture session
     if (self.captureSession == nil)
     {
         self.captureSession = [AVCaptureSession new];
     }
     
-    // Set up camera preview layer.
-    AVCaptureDevice *caputreDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    if (!caputreDevice)
-    {
-        NSLog(@"Error: Capture device not initilized");
-        abort();
+    // Setup Preview Session
+    self.capturePreviewLayer.session = self.captureSession;
+    
+    self.sessionQueue = dispatch_queue_create("session queue", DISPATCH_QUEUE_SERIAL);
+    setupResult = AVCamSetupResultSuccess;
+    
+    // Check current authorization status
+    switch ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo]) {
+        case AVAuthorizationStatusAuthorized:
+            // Nothing
+            break;
+        case AVAuthorizationStatusNotDetermined:
+        {
+            // Suspend session queue for now, wait until auithorization
+            dispatch_suspend(self.sessionQueue);
+            [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted){
+                if (!granted)
+                {
+                    setupResult = AVCamSetupResultCameraNotAuthorized;
+                }
+                // Resume Session queue
+                dispatch_resume(self.sessionQueue);
+            }];
+        }
+        default:
+            setupResult = AVCamSetupResultCameraNotAuthorized;
+            break;
     }
     
-    NSError *error = nil;
-    AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:caputreDevice error:&error];
-    if (error)
-    {
-        NSLog(@"Error: Failed to create device input %@", error);
-        abort();
-    }
     
-    // Check caputure session can accept input
-    if (![self.captureSession canAddInput:deviceInput])
-    {
-        NSLog(@"Error: Capture session can not accept input");
-        abort();
-    }
+    // Setup session through GCD
+    dispatch_async(self.sessionQueue, ^(void){
+        if (setupResult != AVCamSetupResultSuccess)
+        {
+            return; // Do not have permission to setup camera
+        }
+        
+        NSError *error;
+        
+        
     
-    // Set Input
-    [self.captureSession addInput:deviceInput];
+    });
     
-    // Configure Preview layer
-    self.capturePreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession];
-    self.capturePreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    
-    [self.capturePreviewLayer setFrame:CGRectMake(0, 0, self.imageView.frame.size.width, self.imageView.frame.size.height)];
-    
-    // Add layer to view
-    [self.imageView.layer addSublayer:self.capturePreviewLayer];
-    
-    // Start camera
-    [self.captureSession startRunning];
     
     
     

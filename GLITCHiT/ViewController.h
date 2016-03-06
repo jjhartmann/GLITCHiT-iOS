@@ -15,9 +15,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 
 // Camera View
-@property AVCaptureVideoPreviewLayer *capturePreviewLayer;
-@property AVCaptureSession *captureSession;
-@property AVCaptureVideoDataOutput *videoDataOutput;
+@property (nonatomic) AVCaptureVideoPreviewLayer *capturePreviewLayer;
+@property (nonatomic) AVCaptureSession *captureSession;
+@property (nonatomic) AVCaptureVideoDataOutput *videoDataOutput;
+@property (nonatomic) AVCaptureStillImageOutput *stillImageOutput;
+@property (nonatomic) dispatch_queue_t sessionQueue;
+
 
 - (IBAction)cameraButtonActivated:(id)sender;
 @end
