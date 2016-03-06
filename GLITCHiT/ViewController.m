@@ -187,9 +187,34 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     [self.captureSession addObserver:self forKeyPath:@"running" options:NSKeyValueObservingOptionNew context:ContextSesssionRunning];
     [self.stillImageOutput addObserver:self forKeyPath:@"capturingStillImage" options:NSKeyValueObservingOptionNew context:ContextStillImageCaputuring];
     
-    // TODO: Add selectors
+    // TODO: Add selectors Notification Center
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    if (context == ContextStillImageCaputuring)
+    {
+        // Flash the preview to indicate capture
+        if ([change[NSKeyValueChangeNewKey] boolValue ])
+        {
+            dispatch_async(self.sessionQueue, ^(void){
+                self.imageView.layer.opacity = 0.0;
+                [UIView animateWithDuration:0.25 animations:^(void){
+                    self.imageView.layer.opacity = 1.0;
+                }];
+            });
+        }
+    }
+    else if (context == ContextSesssionRunning)
+    {
+        // TODO: Something when session running.
+        // Freeze button.
+    }
+    else
+    {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context ];
+    }
+}
 
 #pragma mark -
 #pragma mark UI Element Actions
