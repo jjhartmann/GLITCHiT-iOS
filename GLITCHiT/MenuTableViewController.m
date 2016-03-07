@@ -67,6 +67,11 @@
     switch (indexPath.row) {
         case 0:
             NSLog(@"CAMERA");
+            if (![self.currentView  isEqual: @"MainCamera"])
+            {
+                [self.delegate menuItemIsSelected:0];
+                [self performSegueWithIdentifier:@"aboutViewSegue" sender:self];
+            }
             break;
         case 1:
             NSLog(@"Load Image");
@@ -82,7 +87,8 @@
             if (![self.currentView  isEqual: @"AboutView"])
             {
                 [self.delegate menuItemIsSelected:4];
-                [self performSegueWithIdentifier:@"aboutViewSegue" sender:self];            }
+                [self performSegueWithIdentifier:@"aboutViewSegue" sender:self];
+            }
             break;
         default:
             break;
