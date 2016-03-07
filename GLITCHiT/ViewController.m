@@ -228,7 +228,9 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 #pragma mark -
 #pragma mark UI Element Actions
 
-- (IBAction)cameraButtonActivated:(id)sender {
+- (IBAction)cameraButtonActivated:(id)sender
+{
+    [self performSegueWithIdentifier:@"glitchViewSegue" sender:self];
 }
 
 - (IBAction)switchCameraActivited:(id)sender {
