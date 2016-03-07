@@ -134,6 +134,7 @@
                         <outlet property="imageView" destination="a8m-fp-zVo" id="6K8-Ge-jMp"/>
                         <outlet property="switchCameraButton" destination="zv9-A7-2ey" id="CRh-Ne-M2R"/>
                         <outlet property="switchCameraButtonRing" destination="3t1-6t-8eG" id="FTZ-wj-Oum"/>
+                        <segue destination="k9c-vi-7wF" kind="show" id="FDK-49-1M8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -158,21 +159,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="12g-mh-CKL">
-                                <rect key="frame" x="0.0" y="-5" width="600" height="517"/>
+                                <rect key="frame" x="0.0" y="-5" width="600" height="516"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgN-94-nma">
+                                <rect key="frame" x="0.0" y="441" width="600" height="159"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GlitchPanel" translatesAutoresizingMaskIntoConstraints="NO" id="V8t-Ca-GL4">
+                                        <rect key="frame" x="0.0" y="69" width="600" height="90"/>
+                                        <color key="backgroundColor" red="0.1058823529" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="Wq6-0a-Koi"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="glitchButton" translatesAutoresizingMaskIntoConstraints="NO" id="uOs-yr-ydf">
+                                        <rect key="frame" x="268" y="47" width="65" height="65"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqP-90-qa2">
+                                        <rect key="frame" x="569" y="102" width="23" height="24"/>
+                                        <state key="normal" image="Upload 2"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vqP-90-qa2" secondAttribute="trailing" constant="8" id="2hB-NN-ceU"/>
+                                    <constraint firstAttribute="trailing" secondItem="V8t-Ca-GL4" secondAttribute="trailing" id="B9w-Il-UKV"/>
+                                    <constraint firstItem="V8t-Ca-GL4" firstAttribute="leading" secondItem="pgN-94-nma" secondAttribute="leading" id="MBH-Tl-WIH"/>
+                                    <constraint firstItem="vqP-90-qa2" firstAttribute="centerY" secondItem="pgN-94-nma" secondAttribute="centerY" constant="34.5" id="dM6-8L-W6Z"/>
+                                    <constraint firstAttribute="height" constant="159" id="eta-d2-fAI"/>
+                                    <constraint firstAttribute="bottom" secondItem="V8t-Ca-GL4" secondAttribute="bottom" id="x8e-Gg-onn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="pgN-94-nma" secondAttribute="trailing" constant="-20" id="AHY-xe-ift"/>
                             <constraint firstAttribute="trailingMargin" secondItem="12g-mh-CKL" secondAttribute="trailing" constant="-20" id="HPc-Kt-QH6"/>
                             <constraint firstItem="12g-mh-CKL" firstAttribute="top" secondItem="QCH-CC-Ocv" secondAttribute="topMargin" constant="-5" id="VuW-FF-xae"/>
+                            <constraint firstItem="pgN-94-nma" firstAttribute="leading" secondItem="QCH-CC-Ocv" secondAttribute="leadingMargin" constant="-20" id="YBT-XS-3ig"/>
+                            <constraint firstItem="lbD-jd-Zdc" firstAttribute="top" secondItem="pgN-94-nma" secondAttribute="bottom" id="gVf-gh-o7E"/>
                             <constraint firstItem="12g-mh-CKL" firstAttribute="leading" secondItem="QCH-CC-Ocv" secondAttribute="leadingMargin" constant="-20" id="hCZ-eP-02f"/>
-                            <constraint firstItem="lbD-jd-Zdc" firstAttribute="top" secondItem="12g-mh-CKL" secondAttribute="bottom" constant="88" id="vEu-lu-lnp"/>
+                            <constraint firstItem="lbD-jd-Zdc" firstAttribute="top" secondItem="12g-mh-CKL" secondAttribute="bottom" constant="89" id="vEu-lu-lnp"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxH-hc-6av" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="-180"/>
+            <point key="canvasLocation" x="1468" y="-338"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="Cmc-bn-m8H">
@@ -391,11 +422,14 @@
     </scenes>
     <resources>
         <image name="Flash On" width="22" height="39"/>
+        <image name="GlitchPanel" width="640" height="90"/>
         <image name="IMG_20150720_015918" width="1224" height="1632"/>
         <image name="Oval 1" width="56" height="56"/>
         <image name="Switch Camera" width="31" height="28"/>
+        <image name="Upload 2" width="23" height="24"/>
         <image name="cameraButton" width="109" height="109"/>
         <image name="cameraButtonRing" width="140" height="140"/>
+        <image name="glitchButton" width="123" height="123"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
