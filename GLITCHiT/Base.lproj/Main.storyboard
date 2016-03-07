@@ -160,23 +160,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="12g-mh-CKL">
                                 <rect key="frame" x="0.0" y="-5" width="600" height="517"/>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kF-Iq-ijC">
-                                <rect key="frame" x="0.0" y="510" width="600" height="90"/>
-                                <color key="backgroundColor" red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRu-jT-wNv">
-                                <rect key="frame" x="215" y="422" width="170" height="170"/>
-                                <state key="normal" image="button_destroyed_01_HighRes"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="12g-mh-CKL" secondAttribute="trailing" constant="-20" id="HPc-Kt-QH6"/>
-                            <constraint firstItem="9kF-Iq-ijC" firstAttribute="leading" secondItem="QCH-CC-Ocv" secondAttribute="leadingMargin" constant="-20" id="QbB-hk-bQZ"/>
                             <constraint firstItem="12g-mh-CKL" firstAttribute="top" secondItem="QCH-CC-Ocv" secondAttribute="topMargin" constant="-5" id="VuW-FF-xae"/>
                             <constraint firstItem="12g-mh-CKL" firstAttribute="leading" secondItem="QCH-CC-Ocv" secondAttribute="leadingMargin" constant="-20" id="hCZ-eP-02f"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9kF-Iq-ijC" secondAttribute="trailing" constant="-20" id="jTn-QX-U9G"/>
-                            <constraint firstItem="lbD-jd-Zdc" firstAttribute="top" secondItem="9kF-Iq-ijC" secondAttribute="bottom" id="qMI-YY-n2T"/>
                             <constraint firstItem="lbD-jd-Zdc" firstAttribute="top" secondItem="12g-mh-CKL" secondAttribute="bottom" constant="88" id="vEu-lu-lnp"/>
                         </constraints>
                     </view>
@@ -405,7 +394,6 @@
         <image name="IMG_20150720_015918" width="1224" height="1632"/>
         <image name="Oval 1" width="56" height="56"/>
         <image name="Switch Camera" width="31" height="28"/>
-        <image name="button_destroyed_01_HighRes" width="170" height="170"/>
         <image name="cameraButton" width="109" height="109"/>
         <image name="cameraButtonRing" width="140" height="140"/>
     </resources>
