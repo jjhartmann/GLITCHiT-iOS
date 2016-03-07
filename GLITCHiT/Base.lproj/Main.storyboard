@@ -171,26 +171,26 @@
                                             <constraint firstAttribute="height" constant="90" id="Wq6-0a-Koi"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glitchButton" translatesAutoresizingMaskIntoConstraints="NO" id="uOs-yr-ydf">
-                                        <rect key="frame" x="268" y="47" width="65" height="65"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="65" id="UrM-yk-FJq"/>
-                                            <constraint firstAttribute="width" constant="65" id="Ze5-Ml-3u4"/>
-                                        </constraints>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqP-90-qa2">
                                         <rect key="frame" x="569" y="102" width="23" height="24"/>
                                         <state key="normal" image="Upload 2"/>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glitchBtnHR" translatesAutoresizingMaskIntoConstraints="NO" id="uOs-yr-ydf">
+                                        <rect key="frame" x="129" y="57" width="343" height="343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="343" id="dd9-jz-nN4"/>
+                                            <constraint firstAttribute="height" constant="343" id="deR-qY-LcS"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="vqP-90-qa2" secondAttribute="trailing" constant="8" id="2hB-NN-ceU"/>
+                                    <constraint firstItem="uOs-yr-ydf" firstAttribute="centerX" secondItem="pgN-94-nma" secondAttribute="centerX" id="92N-Q0-BTA"/>
                                     <constraint firstAttribute="trailing" secondItem="V8t-Ca-GL4" secondAttribute="trailing" id="B9w-Il-UKV"/>
                                     <constraint firstItem="V8t-Ca-GL4" firstAttribute="leading" secondItem="pgN-94-nma" secondAttribute="leading" id="MBH-Tl-WIH"/>
+                                    <constraint firstItem="uOs-yr-ydf" firstAttribute="centerY" secondItem="pgN-94-nma" secondAttribute="centerY" constant="149" id="ZPo-Xg-Rqa"/>
                                     <constraint firstItem="vqP-90-qa2" firstAttribute="centerY" secondItem="pgN-94-nma" secondAttribute="centerY" constant="34.5" id="dM6-8L-W6Z"/>
                                     <constraint firstAttribute="height" constant="159" id="eta-d2-fAI"/>
-                                    <constraint firstItem="uOs-yr-ydf" firstAttribute="centerX" secondItem="pgN-94-nma" secondAttribute="centerX" id="oDK-1L-V30"/>
-                                    <constraint firstItem="uOs-yr-ydf" firstAttribute="centerY" secondItem="pgN-94-nma" secondAttribute="centerY" id="puh-6L-EYO"/>
                                     <constraint firstAttribute="bottom" secondItem="V8t-Ca-GL4" secondAttribute="bottom" id="x8e-Gg-onn"/>
                                 </constraints>
                             </view>
@@ -440,7 +440,7 @@
         <image name="Upload 2" width="23" height="24"/>
         <image name="cameraButton" width="109" height="109"/>
         <image name="cameraButtonRing" width="140" height="140"/>
-        <image name="glitchButton" width="123" height="123"/>
+        <image name="glitchBtnHR" width="272" height="272"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

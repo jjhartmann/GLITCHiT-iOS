@@ -40,9 +40,15 @@
         }];
         
         
-        [UIView animateWithDuration:0.75 animations:^(void){
-            self.glitchButton.transform = CGAffineTransformMakeScale(4.0, 4.0);
-            
+        
+        // Set Glitch Btn to original position.
+        CGRect ogbFrame = self.glitchButton.frame;
+        CGRect gbFrame = CGRectMake(165, 47, 65, 65);
+        self.glitchButton.frame = gbFrame;
+        
+        [UIView animateWithDuration:1.0 animations:^(void){
+            self.glitchButton.frame = ogbFrame;
+            self.glitchButton.transform = CGAffineTransformMakeRotation(360.0);
         }];
         
 //        [UIView animateWithDuration:0.75 animations:^(void){
