@@ -280,6 +280,9 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     return YES;
 }
 
+#pragma mark -
+#pragma mark Idel Timer Impl
+
 - (void)resetIdleTimer
 {
     if (!self.idleTimer)
@@ -334,5 +337,18 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     
     return [super nextResponder];
 }
+
+#pragma mark -
+#pragma Gesture recognizer delegate impls
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if (touch.view == self.imageView.superview)
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
 
 @end
