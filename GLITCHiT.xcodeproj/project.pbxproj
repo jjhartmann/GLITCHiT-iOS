@@ -13,6 +13,7 @@
 		77D5B5801C8ACD13004AC755 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D5B57F1C8ACD13004AC755 /* SettingsViewController.m */; };
 		77D5B5831C8ACDAC004AC755 /* LoadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D5B5821C8ACDAC004AC755 /* LoadImageViewController.m */; };
 		77D5B5861C8C01A7004AC755 /* CameraPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D5B5851C8C01A7004AC755 /* CameraPreviewView.m */; };
+		77D5B5891C8D13A5004AC755 /* GlitchPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D5B5881C8D13A5004AC755 /* GlitchPhotoViewController.m */; };
 		77D67EF41C7AF67000C2BFC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D67EF31C7AF67000C2BFC1 /* main.m */; };
 		77D67EF71C7AF67000C2BFC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D67EF61C7AF67000C2BFC1 /* AppDelegate.m */; };
 		77D67EFA1C7AF67000C2BFC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D67EF91C7AF67000C2BFC1 /* ViewController.m */; };
@@ -53,6 +54,8 @@
 		77D5B5821C8ACDAC004AC755 /* LoadImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadImageViewController.m; sourceTree = "<group>"; };
 		77D5B5841C8C01A7004AC755 /* CameraPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraPreviewView.h; sourceTree = "<group>"; };
 		77D5B5851C8C01A7004AC755 /* CameraPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPreviewView.m; sourceTree = "<group>"; };
+		77D5B5871C8D13A5004AC755 /* GlitchPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlitchPhotoViewController.h; sourceTree = "<group>"; };
+		77D5B5881C8D13A5004AC755 /* GlitchPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlitchPhotoViewController.m; sourceTree = "<group>"; };
 		77D67EEF1C7AF67000C2BFC1 /* GLITCHiT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLITCHiT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D67EF31C7AF67000C2BFC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		77D67EF51C7AF67000C2BFC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 				77D67EF61C7AF67000C2BFC1 /* AppDelegate.m */,
 				77D67EF81C7AF67000C2BFC1 /* ViewController.h */,
 				77D67EF91C7AF67000C2BFC1 /* ViewController.m */,
+				77D5B5871C8D13A5004AC755 /* GlitchPhotoViewController.h */,
+				77D5B5881C8D13A5004AC755 /* GlitchPhotoViewController.m */,
 				77D5B5841C8C01A7004AC755 /* CameraPreviewView.h */,
 				77D5B5851C8C01A7004AC755 /* CameraPreviewView.m */,
 				77D5B5751C8909E4004AC755 /* SlideBaseViewController.h */,
@@ -307,6 +312,7 @@
 				77D67EF41C7AF67000C2BFC1 /* main.m in Sources */,
 				77D5B5771C8909E4004AC755 /* SlideBaseViewController.m in Sources */,
 				77D5B57A1C898977004AC755 /* MenuTableViewController.m in Sources */,
+				77D5B5891C8D13A5004AC755 /* GlitchPhotoViewController.m in Sources */,
 				77D5B5831C8ACDAC004AC755 /* LoadImageViewController.m in Sources */,
 				77D5B5801C8ACD13004AC755 /* SettingsViewController.m in Sources */,
 				77D5B5861C8C01A7004AC755 /* CameraPreviewView.m in Sources */,
